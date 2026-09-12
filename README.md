@@ -1,60 +1,103 @@
-# QQ Super Multiband Compression
+# QQ Super Multiband Compression 0.3.2
 
-**Qing Audio · 0.2.8 Stable**
+**Qing Audio · Stable · 2026-09-12**
 
-QQ Super Compression 的多段扩展版。把声音分成最多五个频段，分别用 Ratio 与 Mix 控制压缩量，再用 MAKEUP、MATCH 和 Band Output 整理音量，在同一个窗口里观察处理前后的频谱和动态变化。
+QQ Super Compression的多段扩展版：最多五段，每段可选择下压、上压或双压，通过Ratio与Mix控制动态，并在频谱和Dynamic Display中比较处理前后。
 
-The multiband extension of QQ Super Compression. Split audio into up to five bands, shape compression with Ratio and Mix, balance levels with MAKEUP, MATCH and Band Output, and compare input/output spectra and dynamics in one window.
+The multiband extension of QQ Super Compression: up to five bands, each with downward, upward or Dual processing. Shape dynamics with Ratio and Mix and compare the result in the spectrum and Dynamic Display.
 
-压缩核心没有传统 Attack/Release 的启动与释放动作，也不是把这两个时间参数藏在内部。Lookahead 用于预读处理。分频、增益变化和并行混合仍会改变声音；可通过频谱、动态显示和旁通对比判断效果。
+压缩核心没有传统Attack/Release的启动与释放动作，也不是把时间参数藏在内部。Lookahead用于提前观察信号；分频和动态处理仍会影响波形。
 
-The compression core does not use conventional attack/release envelope behavior or hide those timing controls internally. Lookahead provides advance processing. Filtering, gain changes and parallel mixing still change the signal; use the spectra, dynamic display and bypass to judge the result.
+The compression core has no conventional attack/release envelope behavior or hidden attack/release timing controls. Lookahead observes the signal ahead; crossovers and dynamic processing still affect the waveform.
+
+## 新增上压与Range / Upward processing and Range
+
+Single Ratio向左为上压，例如1:8；向右为下压，例如8:1。上压处理Threshold以上的内容。Range设定检测电平上界，达到或超过后停止动态处理；它不是“最多压多少dB”。MAKEUP和输出增益仍可改变最终音量。
+
+Turn Single Ratio left for upward processing, such as 1:8, or right for downward processing, such as 8:1. Upward processing acts above Threshold. Range is the upper detector-level boundary: dynamic processing stops at or above it. It is not a maximum reduction amount. MAKEUP and output gains can still change the final level.
+
+![Single upward / 单压向上处理](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/Single-Upward-0.3.2.png)
+
+## 双压如何使用 / Using Dual
+
+- 低于或等于UP阈值：不抬升、不压低。 / At or below UP: no upward or downward action.
+- 高于UP、低于DOWN：按UP Ratio抬升。 / Above UP and below DOWN: lift according to UP Ratio.
+- 高于DOWN：停止抬升，改按DOWN Ratio下压；在DOWN边界动态增益回到0 dB。 / Above DOWN: stop lifting and reduce according to DOWN Ratio; at DOWN itself, dynamic gain returns to 0 dB.
+
+Dual没有Range，两个分支各有ON/OFF，并提供反向联动的LINK。先关闭LINK、观察Display设好上下阈值，再分别调整两个Ratio；需要联动时再开启LINK。开关保留交叉淡变。
+
+Dual has no Range. Each branch has ON/OFF, and LINK couples the two Ratios inversely. Start with LINK off, use the Display to place both thresholds, then adjust each Ratio. Enable LINK when coupled adjustment is useful. Switching is crossfaded.
+
+同一频段、输入与检测设置下，Single的Threshold=-inf、Range OFF、Mix100%时，8:1下压与1:8上压经输出音量匹配，理论上有相同的相对动态。Dual默认UP=-inf、DOWN=0 dB，从默认LINK状态联动时也可能与对应Single等效。双压的意义在于有意识地分配处理区间和力度，不是只切换模式。详见两份手册第7–11页。
+
+For the same band, input and detection settings, Single at Threshold=-inf, Range OFF and Mix100% gives theoretically identical relative dynamics for 8:1 downward and 1:8 upward after output level matching. Default Dual thresholds (UP=-inf, DOWN=0 dB) with LINK used from its default state can also match the corresponding Single result. Use Dual to deliberately choose operating regions and strengths, not just to change the mode label. See manual pages 7–11.
+
+![Dual display / 双压动态显示](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/Dual-Display-0.3.2.png)
+
+截图是0.3.2的实际界面示例，数值不是通用预设。 / Screenshots show actual 0.3.2 interface examples, not universal presets.
 
 ## 下载 / Downloads
 
-[打开 0.2.8 Release / Open the 0.2.8 release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v0.2.8)
+[打开0.3.2 Release / Open release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v0.3.2)
 
-| 下载 / Download | 适用 / For |
-|---|---|
-| [Windows 10/11 64-bit](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-Windows-x64-VST3.zip) | VST3 |
-| [Apple Silicon · 原生 / native](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-macOS-Apple-Silicon-VST3.zip) | VST3 |
-| [Intel / Rosetta](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-macOS-Intel-x86_64-VST3.zip) | VST3 |
-| [Apple Silicon + Intel](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-macOS-Universal-2-AU.zip) | AU |
-| [中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-Installation-zh-CN.txt) | TXT |
-| [English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-Installation-en.txt) | TXT |
-| [中文用户手册（含 0.2.8 补充）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-User-Manual-zh-CN.pdf) | PDF |
-| [English manual with 0.2.8 addendum](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.2.8/QQ-Super-Multiband-Compression-0.2.8-User-Manual-en.pdf) | PDF |
+- [Windows x64 VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-Windows-x64-VST3.zip)
+- [macOS Apple Silicon VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-macOS-Apple-Silicon-VST3.zip)
+- [macOS Intel / Rosetta VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-macOS-Intel-x86_64-VST3.zip)
+- [macOS Universal 2 AU](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-macOS-Universal-2-AU.zip)
+- [中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-Installation-zh-CN.txt)
+- [English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-Installation-en.txt)
+- [中文手册 · 22页](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-User-Manual-zh-CN.pdf)
+- [English manual · 22 pages](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/QQ-Super-Multiband-Compression-0.3.2-User-Manual-en.pdf)
+- [Single upward screenshot](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/Single-Upward-0.3.2.png)
+- [Dual display screenshot](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v0.3.2/Dual-Display-0.3.2.png)
 
-macOS 需要 11.0 或更新版本。VST3 按宿主架构只选一个包；Apple Silicon 上使用 Rosetta 的 Intel 宿主请选择 Intel 包。Logic 用户可直接安装 Universal 2 AU。AU 与 VST3 可按需要分别安装。
+## 安装、兼容性与升级 / Installation, compatibility and upgrading
 
-macOS 11.0 or later is required. Choose one VST3 package matching your host architecture; Intel hosts under Rosetta use the Intel package. Logic users can install the Universal 2 AU. Install only the formats your host needs.
+Windows 10/11 64-bit：安装完整QQ Super Multiband Compression.vst3到`C:\Program Files\Common Files\VST3`。macOS 11.0以上：按宿主架构只选一个VST3包，安装到`~/Library/Audio/Plug-Ins/VST3`；AU安装到`~/Library/Audio/Plug-Ins/Components`。Universal 2 AU包含Apple Silicon和Intel。Rosetta下的Intel宿主选Intel VST3。各ZIP内保留使用许可和第三方说明。
 
-## 0.2.8 有什么变化 / What's new
+Windows 10/11 64-bit: copy the complete QQ Super Multiband Compression.vst3 bundle to `C:\Program Files\Common Files\VST3`. On macOS 11.0+, choose one VST3 package matching the host architecture and install in `~/Library/Audio/Plug-Ins/VST3`; AU goes in `~/Library/Audio/Plug-Ins/Components`. Universal 2 AU includes Apple Silicon and Intel. Intel hosts under Rosetta use Intel VST3. Each ZIP includes license and third-party notices.
 
-- 更宽的 1200×800 默认窗口，两块图表仍可等分、放大和折叠。 / A wider 1200×800 default window with split, expanded and collapsed views.
-- 顶部 A/B 比较整套设置，Bypass 对比整个插件处理前后，Sidechain 从顶部统一设置。 / Whole-setup A/B, whole-plug-in bypass and shared top-row sidechain controls.
-- 每段仍有独立的 ON/OFF、Solo 和压缩/音量控制。 / Independent band ON/OFF, Solo, dynamics and level controls are retained.
-- Light、Dark、Classic 三种风格，以及处理前后频谱、NET 净增益和动态历史显示。 / Three themes, input/output spectra, NET gain curves and dynamic history.
+完全关闭宿主后再升级，移出旧副本，避免用户和系统目录重复安装。重新打开并扫描插件；升级前另存工程，检查原有自动化和声音。详细步骤、Logic重扫及安全处理见双语安装说明。
 
-## 安装与开始使用 / Install and get started
+Quit the host before upgrading, move old copies out of scan folders and avoid duplicate user/system installations. Reopen and rescan. Save a session copy and check existing automation and sound. The bilingual guides include detailed steps, Logic rescanning and security handling.
 
-1. 完全退出宿主，解压下载包，保留完整的 `.vst3` 或 `.component` bundle。升级时先把旧副本移出扫描目录，再装新版本。 / Quit your host, extract the archive and keep the complete bundle. Move old copies out of scan folders before upgrading.
-2. Windows VST3 放到 `C:\Program Files\Common Files\VST3`；macOS VST3 放到 `~/Library/Audio/Plug-Ins/VST3`，AU 放到 `~/Library/Audio/Plug-Ins/Components`。 / Copy to the matching Windows or macOS folder, then reopen and rescan in your host.
-3. 在空白频谱双击或点击 ADD BAND，拖动分界选择频段。Ratio 默认 1:1，配合 Mix 调压缩量，再调整 MAKEUP 或使用 MATCH。 / Add a band, drag its boundaries, then adjust Ratio and Mix before balancing MAKEUP or using MATCH.
-4. 升级前另存工程。详见上方双语安装说明；20 页手册的第 19-20 页是 0.2.8 补充，原正文与截图保持原版。当前系统支持以安装说明为准。 / Save a session copy before upgrading. The 20-page manuals retain the original body and add 0.2.8 guidance on pages 19-20. Use the installation guides for current platform support.
+## 使用注意 / Known limitations
 
-## 使用注意 / Before use
+- 两种相位都可能出现分频振铃；陡Slope和明显段间增益差可能使其更突出。0.3.2不包含已撤回的LOW RING实验，也不宣称消除振铃。 / Crossover ringing can occur in both phase modes, especially with steep slopes and large band-gain differences. The withdrawn LOW RING experiment is absent; this release does not claim to eliminate ringing.
+- Normal与Linear Phase保留相同分频延迟，加上Lookahead；启用宿主延迟补偿。 / Normal and Linear Phase reserve the same crossover delay plus Lookahead; enable host delay compensation.
+- macOS成品为ad-hoc签名，未经过Apple Developer ID公证；仅对可信下载按安装指南处理隔离。 / Mac builds are ad-hoc signed, not Developer ID notarized. Follow the guide for quarantine handling only for trusted downloads.
+- 自动检查不代表所有宿主、缩放或长期会话完全一致。 / Automated checks do not guarantee identical behavior in every host, scale or long session.
 
-- macOS 包为 ad-hoc 签名，未经过 Apple Developer ID 公证。遇到隔离提示时，请按安装说明针对可信的插件文件处理。 / macOS builds are ad-hoc signed, not Developer ID notarized. Follow the guide if a trusted download is blocked by quarantine.
-- 普通与线性相位目前保留相同的分频延迟，再加选定的 Lookahead；请启用宿主延迟补偿。 / Both phase modes currently reserve the same crossover delay plus Lookahead. Enable host delay compensation.
-- 旧工程显示 SC: MIXED 时，原各段侧链设置先保留；明确修改全局侧链后才统一。 / SC: MIXED preserves different legacy band-sidechain settings until you edit a global sidechain control.
-- 本版本经过自动音频与加载检查；不同宿主的焦点、缩放和长期运行仍可能有差异。 / Automated audio/loading checks do not guarantee identical behavior in every host or long session.
+本产品闭源，源码仓库保持私有。此仓库仅提供公开成品、手册和截图。 / This is a proprietary product. Source remains private; this repository provides compiled products, manuals and screenshots only.
 
-## 版本变化 / Version history
+## 从0.2.8以来的变化 / Changes since 0.2.8
 
-首次公开下载同时保留此前版本的功能变化记录。较早条目不表示这些版本均有独立下载包。
+### 0.3.2 — Stable
 
-This first public download includes the preceding feature history. Earlier entries do not imply separate downloadable releases.
+记住最后手动选择的Normal/Linear Phase与Slope，新实例沿用，工程优先恢复自己的参数。沿用移除LOW RING后的原动态逻辑。中英文说明书均更新为22页，完整说明上压、Range、双压、LINK及等音量比较。
+
+Remembers manual Normal/Linear Phase and Slope choices for new instances while saved projects retain their own parameters. Keeps the original dynamics after LOW RING removal. Both manuals are now 22 pages, covering upward processing, Range, Dual, LINK and level-matched comparison.
+
+### 0.3.1 — 实验版，已撤回 / Withdrawn experiment
+
+曾测试LOW RING以减少振铃，但其对频段重叠和音量的影响不符合原动态目标，已取消，不作为本次功能提供。
+
+Tested LOW RING to reduce ringing. Its effects on band overlap and level did not meet the original dynamic goals. The experiment was withdrawn and is not included here.
+
+### 0.3.0 — 上压与双压 / Upward and Dual
+
+每段加入双向Single Ratio、Range、Dual两阈值和两个Ratio、分支开关与LINK；显示同时呈现Boost/Cut。保留每段Match、Mix、输出和开关交叉淡变。
+
+Adds bidirectional Single Ratio, Range, Dual thresholds and Ratios, branch switches and LINK per band. Displays show Boost and Cut. Retains per-band Match, Mix, output controls and switching fades.
+
+### 0.2.9 — 显示修复 / Display fix
+
+修复宽屏界面高频段OUT/NET与Hz标签位置错误；压缩和分频行为不变。
+
+Fixes misplaced high-frequency OUT/NET and Hz labels in wide layouts, without changing compression or crossovers.
+
+
+## 既有公开版本记录 / Earlier version history
 
 ### 0.2.8
 
