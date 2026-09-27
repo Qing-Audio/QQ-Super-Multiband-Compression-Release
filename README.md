@@ -1,6 +1,6 @@
 # QQ Super Multiband Compression 1.1.0
 
-**Qing Audio · 2026-09-27**
+**Qing Audio · Stable 1.1.0 · 2026-09-27**
 
 QQ Super Compression 的多段扩展版：最多五段，每段独立选择 Classic / Super，以及向下、向上或双压，通过 Ratio、Mix 和增益控制塑造动态。保持原有 Light / Dark / Classic 主题。
 
