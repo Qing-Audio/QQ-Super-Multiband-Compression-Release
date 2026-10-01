@@ -1,3 +1,80 @@
+# QQ Super Multiband Compression 1.2.7
+
+**Qing Audio · Stable 1.2.7 · 2026-10-02**
+
+QQ Super Compression 的多段扩展版：最多五段，每段可独立选择 Classic/Super、侧链来源与检测 EQ，并使用向下、向上或双压。ECO 在宿主明确停播时立即静音和暂停处理；FULL 保留停播时的实时输入监听，并在极低残留与尾音满足安全条件后休眠。中英文 1.2.7 用户手册各 35 页。本项目闭源，公开仓库只提供安装包与用户文档。
+
+The multiband extension of QQ Super Compression: up to five bands with independent Classic/Super, sidechain sources and detector EQ, plus downward, upward or Dual compression. ECO immediately mutes and suspends on a known host Stop. FULL retains live stopped-input monitoring and sleeps only after very low residuals and signal tails meet guarded conditions. The 1.2.7 Chinese and English manuals have 35 pages each. The product is proprietary; this public repository contains installation packages and user documents only.
+
+## 下载 / Downloads
+
+[打开 1.2.7 Release / Open the 1.2.7 release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.2.7)
+
+| 下载 / Download | 格式 / Format |
+|---|---|
+| [Windows 10/11 x64](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-Windows-x64-VST3.zip) | VST3 |
+| [macOS Apple Silicon](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-macOS-Apple-Silicon-VST3.zip) | VST3 |
+| [macOS Intel / Rosetta](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-macOS-Intel-VST3.zip) | VST3 |
+| [macOS Universal 2](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-macOS-Universal-2-AU.zip) | AU |
+| [中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E%EF%BC%88%E4%B8%AD%E6%96%87%EF%BC%89.txt) | TXT |
+| [English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20Installation%20Guide%20%28English%29.txt) | TXT |
+| [中文用户手册 · 35 页](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%20%E4%B8%AD%E6%96%87%E7%89%88.pdf) | PDF |
+| [English user manual · 35 pages](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20User%20Manual%20English.pdf) | PDF |
+
+## 安装与使用 / Install and use
+
+升级前保存工程副本并完全退出宿主，解压后替换完整插件 bundle，再重新扫描。Windows VST3 安装到 `C:\Program Files\Common Files\VST3`；macOS VST3 安装到 `~/Library/Audio/Plug-Ins/VST3`，AU 安装到 `~/Library/Audio/Plug-Ins/Components`。macOS 需要 11.0 或更新版本；按宿主架构只选一个 VST3。Apple Silicon 上以 Rosetta 运行的 Intel 宿主应选 Intel 包。详细步骤、安全提示和升级注意事项见对应语言的安装说明。
+
+Save a session copy and fully quit the host before upgrading. Extract and replace the complete plug-in bundle, then rescan. Use `C:\Program Files\Common Files\VST3` on Windows, `~/Library/Audio/Plug-Ins/VST3` for macOS VST3, or `~/Library/Audio/Plug-Ins/Components` for AU. macOS 11 or later is required. Choose one VST3 matching the host architecture; an Intel host under Rosetta needs the Intel build. See your installation guide for detailed steps, security prompts and upgrade notes.
+
+选择频段后设置 Ratio、Threshold 和 Mix；需要另一频段或外部信号触发压缩时，在 SC EQ 中选择检测来源并调整 EQ。ECO 适合停播后无需监听实时输入的情况；停播时仍需监听输入则选 FULL。项目保存当前实例模式，新实例沿用最后一次手动选择。Normal 分频具有频率相关相位响应，请开启宿主延迟补偿。
+
+Select a band and adjust Ratio, Threshold and Mix. To trigger compression from another signal, choose the detector source and EQ under SC EQ. Use ECO when live input need not pass during Stop; use FULL for stopped live monitoring. Sessions save each instance's mode, while new instances use the last manual choice. Normal crossover has frequency-dependent phase response; enable host delay compensation.
+
+## 兼容性与已知事项 / Compatibility and known considerations
+
+Windows x64 VST3 与三类 macOS 成品已通过相应自动构建与验证；AU 在 Apple Silicon 上通过 `auval`，Intel AU 切片已核对但未在独立 Intel 机器运行 `auval`。Mac 为 ad-hoc 签名，未做 Developer ID 公证。FULL 在极端增益或已连接但未使用的侧链仍有噪声时会保守地继续处理。自动检查不等于所有 DAW 的长期工程试听。
+
+Windows x64 VST3 and all three macOS packages passed their respective automated builds and checks. AU passed `auval` on Apple Silicon; its Intel slice was inspected but was not separately run through `auval` on an Intel machine. Mac packages are ad-hoc signed, not Developer ID notarized. FULL can conservatively continue processing with extreme gain or noise on a connected but unused sidechain. Automated checks are not a long-session test in every DAW.
+
+## 从上次公开版起的版本记录 / Version history since the last public release
+
+### 1.2.0
+
+逐段新增侧链来源、检测 EQ、增益与 Listen，Single Ratio 扩展至 1:200–200:1；这是本机 Windows 升级，未单独公开 macOS 包。 / Added per-band sidechain sources, detector EQ, gain and Listen, and expanded Single Ratio to 1:200–200:1. This was a local Windows upgrade without a separate public macOS package.
+
+### 1.2.1
+
+新菜单提供 This Band、Internal Full、External；旧 Band 1–5 路由继续按 Legacy 恢复，并更新双语手册。此前用户确认的 Stable 为 1.2.1。 / New menus offer This Band, Internal Full and External, while saved Band 1–5 routes restore as Legacy. Updated bilingual manuals. The previously user-confirmed Stable was 1.2.1.
+
+### 1.2.2
+
+Makeup 与各段 Wet Gain 收窄至 ±30 dB，MATCH 同步使用这一范围。 / Makeup and each band's Wet Gain were limited to ±30 dB, with the same bound for MATCH.
+
+### 1.2.3
+
+修正拖动旋钮、Master Output 或 Band Output 时切换 Shift 会让数值回跳的问题。 / Fixed value jumps when toggling Shift during knob, Master Output or Band Output dragging.
+
+### 1.2.4
+
+加入逐实例 ECO/FULL、Dual UP/DOWN 各自独立的 Classic/Super、分析优化和全零输入的尾音安全休眠。 / Added per-instance ECO/FULL, independent Classic/Super for Dual UP/DOWN, leaner analysis and tail-safe sleep for exact-zero input.
+
+### 1.2.5
+
+新实例记住上次手动 ECO/FULL 选择；Linear Phase 在完整输入历史归零后跳过无效 FFT，重复相同参数通知不再干扰休眠。 / New instances remember the last manual ECO/FULL choice. Linear Phase skips FFT work after its full input history reaches zero, and redundant unchanged parameter notifications no longer interrupt idle waiting.
+
+### 1.2.6
+
+ECO 明确停播时立即静音暂停；FULL 保留实时输入与尾音安全休眠，同时减少检测器冗余计算。 / ECO immediately mutes and suspends on a known Stop; FULL retains live input and tail-safe sleep, while redundant detector calculations were reduced.
+
+### 1.2.7
+
+FULL 增加带增益与尾音保护的极低残留休眠；修正 macOS AU Ratio 参数别名标记，中英文手册更新至各 35 页。 / FULL adds gain- and tail-guarded very-low-residual sleep. macOS AU Ratio alias metadata was corrected, and both language manuals were updated to 35 pages.
+
+---
+
+## 以前的公开版本 / Earlier public release
+
 # QQ Super Multiband Compression 1.1.0
 
 **Qing Audio · Stable 1.1.0 · 2026-09-27**
