@@ -16,10 +16,10 @@ The multiband extension of QQ Super Compression: up to five bands with independe
 | [macOS Apple Silicon](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-macOS-Apple-Silicon-VST3.zip) | VST3 |
 | [macOS Intel / Rosetta](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-macOS-Intel-VST3.zip) | VST3 |
 | [macOS Universal 2](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-macOS-Universal-2-AU.zip) | AU |
-| [中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E%EF%BC%88%E4%B8%AD%E6%96%87%EF%BC%89.txt) | TXT |
-| [English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20Installation%20Guide%20%28English%29.txt) | TXT |
-| [中文用户手册 · 35 页](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C%20%E4%B8%AD%E6%96%87%E7%89%88.pdf) | PDF |
-| [English user manual · 35 pages](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ%20Super%20Multiband%20Compression%201.2.7%20User%20Manual%20English.pdf) | PDF |
+| [中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-Chinese-Installation-Guide.txt) | TXT |
+| [English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-English-Installation-Guide.txt) | TXT |
+| [中文用户手册 · 35 页](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-Chinese-User-Manual.pdf) | PDF |
+| [English user manual · 35 pages](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.2.7/QQ-Super-Multiband-Compression-1.2.7-English-User-Manual.pdf) | PDF |
 
 ## 安装与使用 / Install and use
 
