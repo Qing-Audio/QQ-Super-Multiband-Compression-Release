@@ -1,3 +1,73 @@
+# QQ Super Multiband Compression 1.3.2
+
+**Qing Audio · Stable 1.3.2 · 2026-10-11**
+
+QQ Super Compression 的多段扩展版：最多五段，独立 Classic/Super、向上/向下/双压及侧链 EQ。1.3.2 增加逐段 Display 范围单击切换，并包含 1.3.1 的毫秒 Window 与累计 MATCH。
+
+The multiband extension of QQ Super Compression: up to five bands with independent Classic/Super, upward/downward/Dual processing and sidechain EQ. Version 1.3.2 adds per-band Display range cycling and includes the millisecond Window and cumulative MATCH changes from 1.3.1.
+
+## 下载 / Downloads
+
+[打开 1.3.2 下载页 / Open the 1.3.2 release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.3.2)
+
+| 下载 / Download | 格式 / Format |
+|---|---|
+| [Windows 10/11 x64](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-Windows-x64-VST3.zip) | VST3 |
+| [macOS Apple Silicon](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-macOS-Apple-Silicon-VST3.zip) | VST3 |
+| [macOS Intel / Rosetta](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-macOS-Intel-VST3.zip) | VST3 |
+| [macOS Universal 2](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-macOS-Universal-2-AU.zip) | AU |
+| [中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-Chinese-Installation-Guide.txt) | TXT |
+| [English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-English-Installation-Guide.txt) | TXT |
+| [中文用户手册 · 40 页](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-Chinese-User-Manual.pdf) | PDF |
+| [English user manual · 40 pages](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.2/QQ-Super-Multiband-Compression-1.3.2-English-User-Manual.pdf) | PDF |
+
+## 1.3.2 - Display 范围与阈值 / Display range and thresholds
+
+- **单击切换显示范围：**每个 Band 的 Display 右上角按钮依次循环 −30 → −60 → −90 → −30 dB，无下拉菜单。曲线、阈值线与右侧推子共用刻度；三档网格分别为 5 / 10 / 15 dB。 / **Single-click display range:** each band's upper-right Display button cycles −30 → −60 → −90 → −30 dB, without a menu. Curves, threshold lines and faders share the scale, with 5 / 10 / 15 dB grid divisions.
+- **保留声音参数：**切换范围不改变阈值、Ratio、音量、Window、MATCH 或延迟。低于可见下限的阈值停靠底部并保留真实读数；向上拖动才进入当前范围。双击仍可输入完整参数范围，Alt 重置保持原有规则。 / **Preserved sound settings:** changing the view leaves thresholds, Ratio, gain, Window, MATCH and latency unchanged. Thresholds below the visible floor dock at the bottom while retaining their actual values. Drag upward to enter the visible range. Double-click still accepts the full parameter range and Alt-reset retains its original behavior.
+- **逐段记忆：**显示范围随工程保存，重新打开窗口恢复；不参与声音 A/B，不新增音频自动化参数。旧工程及新实例默认 −90 dB。 / **Per-band recall:** ranges are saved with sessions and restored when the editor reopens. They stay outside sound A/B and add no audio automation parameter. Older states and new instances default to −90 dB.
+- **重新组织的双语手册：**中文与英文各 40 页。上压、下压与补偿按实际操作顺序说明；MATCH 紧接增益补偿，Display 范围与阈值相邻，Window 与 Lookahead 合并讲解，SAFE 单独成章。 / **Reorganized bilingual manuals:** 40 pages each. Upward/downward compression and compensation follow the working sequence; MATCH follows gain, Display range sits with thresholds, Window is explained with Lookahead, and SAFE has its own chapter.
+
+本次公开包从 1.3.0 直接升级至 1.3.2，同时包含以下 1.3.1 改动。 / This public package upgrades directly from 1.3.0 to 1.3.2 and includes the following 1.3.1 changes.
+
+## 1.3.1 - 自 1.3.0 的更新 / Changes since 1.3.0
+
+- **WINDOW 恢复为毫秒控制：**Normal 与 SAFE 均直接显示每段 WINDOW，取消界面的 DISTORT 百分比；切换 SAFE 保留窗口长度。范围为 0 至当前 Lookahead。 / **WINDOW in milliseconds:** Normal and SAFE both display per-band WINDOW directly, replacing the DISTORT percentage. Switching SAFE preserves its length, from 0 to the current Lookahead.
+- **Lookahead 与窗口分工：**Lookahead 为全局预读预留时间，WINDOW 决定每段实际参考的前后时长；窗口逐采样移动，增益逐采样更新。只改 WINDOW 不改变总延迟。手动改 Lookahead 会恢复五段完整窗口；工程、A/B 与撤销恢复保存值。0 ms Lookahead 禁用 WINDOW 与 SAFE 控件，并保留 SAFE 选择。 / **Lookahead and window roles:** global Lookahead reserves read-ahead time; WINDOW sets each band's actual span on either side. Detection and gain update every sample. WINDOW alone does not change total latency. Manual Lookahead edits reset all five windows to full; sessions, A/B and undo restore saved values. At 0 ms Lookahead, WINDOW and SAFE controls are disabled while the SAFE choice is retained.
+- **累计 MATCH：**每段从本轮播放开始累计，点击将补偿值写入 MAKEUP。重复点击不清空历史、不叠加上次补偿。普通参数修改、循环与跳转保留统计；停播保留有效结果，重新播放开始新一轮。ECO 分析缺失、Band 关闭、旁路或分频范围变化后，需恢复分析并重新播放。 / **Cumulative MATCH:** each band accumulates from the current playback start and writes compensation into MAKEUP. Repeated clicks neither clear history nor stack adjustments. Parameter edits, loops and seeks retain statistics; stopping keeps a valid result and restarting begins a new pass. After missing ECO analysis, band-off/bypass gaps or crossover changes, restore analysis and start a fresh pass.
+- **兼容与手册：**保持已有工程、自动化与逐段窗口长度；保留全局 1x/4x/8x/16x OS、Display 时序、侧链、独立 Dual 算法及 ECO/FULL 静音优化。相关操作已整合进本次中英文 40 页手册。 / **Compatibility and manuals:** preserves existing sessions, automation and per-band window lengths, global 1x/4x/8x/16x OS, Display timing, sidechain, independent Dual algorithms and ECO/FULL silence handling. These operations are integrated into the current 40-page Chinese and English manuals.
+
+## 安装与使用 / Installation and use
+
+升级前保存工程副本并完全退出音频宿主，替换整个插件 bundle。Windows 使用 x64 VST3；macOS 按宿主架构选择 Apple Silicon 或 Intel VST3，Logic 等 AU 宿主使用 Universal 2 AU。macOS 需 11.0 或更新版本，同一种格式不要重复安装。
+
+Save a session copy and fully quit audio hosts before replacing the complete bundle. Use x64 VST3 on Windows. On macOS 11 or later, choose Apple Silicon or Intel VST3 for the host architecture, or Universal 2 AU for Logic and other AU hosts. Avoid duplicate installations of the same format.
+
+短窗口尤其低于 10 ms 时，可比较较高 OS 对混叠的改善。总延迟包含分频、Lookahead 和 OS 滤波器，0 ms Lookahead 不等于整机零延迟。FULL 支持停播监听；ECO 在明确停播时静音，播放中关闭 ECO 窗口会使本轮 MATCH 统计不完整。
+
+For short windows, especially below 10 ms, compare higher OS for alias reduction. Total latency includes crossover, Lookahead and OS filters, so 0 ms Lookahead is not zero plug-in latency. FULL supports stopped monitoring; ECO mutes on a known Stop. Closing the ECO editor during playback makes that MATCH pass incomplete.
+
+## 验证与已知事项 / Validation and known considerations
+
+Windows 沿用已验收的 1.3.2 单击切换版构建及既有验证；新增显示范围专项与真实 VST3 加载均通过。两种 macOS VST3 均验证原生加载、动态、侧链、SAFE/Window/OS/Display 、WINDOW/累计 MATCH 及 1.3.2 显示范围；Apple Silicon 另验证 FULL 静音。Universal 2 AU 在 Apple Silicon 通过 auval，并核对两种架构切片与 ad-hoc 签名。未单独执行 Intel AU auval，未做 Apple Developer ID 公证；自动检查不等同于所有 DAW 的长期试听。
+
+The accepted Windows 1.3.2 click-cycle build and its existing checks are reused, including display-range regression and actual VST3 loading. Both macOS VST3 builds validate native loading, dynamics, sidechain, SAFE/Window/OS/Display, WINDOW/cumulative MATCH, and 1.3.2 Display range; Apple Silicon additionally validates FULL idle handling. Universal 2 AU passes auval on Apple Silicon, with both architecture slices and ad-hoc signatures checked. Separate Intel AU auval and Apple Developer ID notarization were not performed. Automated checks do not replace long-session listening in every DAW.
+
+## 许可与源码 / License and source
+
+产品保持闭源。此公开仓库只提供编译成品和用户文档。GitHub 自动生成的 Source code ZIP/TAR 仅包含本公开页面仓库，不含压缩器源码，也不是插件安装包。中文文档在页面上使用中文标签和下载链接；本地包使用中文文件名。
+
+This product remains proprietary. This public repository provides compiled binaries and user documentation. GitHub's automatic Source code archives contain only this public page repository, not compressor source or plug-in installers. Chinese documents have Chinese display labels and download links; the local package uses Chinese filenames.
+
+Copyright © 2026 Qing Audio. All rights reserved.
+
+---
+
+<details>
+<summary>历史版本记录 / Earlier version history</summary>
+
+以下内容描述其原版本。 / The following records describe their original versions.
+
 # QQ Super Multiband Compression 1.3.0
 
 **Qing Audio · Stable 1.3.0 · 2026-10-09**
@@ -329,5 +399,7 @@ The first multiband version: up to five bands, adjustable crossovers, Normal/Lin
 This product is closed source and its source repository remains private. This repository provides downloads and user information only. GitHub's automatic “Source code” archives contain this public repository's page files, not the plug-in installer or compressor source.
 
 Copyright © 2026 Qing Audio. All rights reserved.
+
+</details>
 
 </details>
