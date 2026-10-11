@@ -1,3 +1,66 @@
+# QQ Super Multiband Compression 1.3.3
+
+**Qing Audio · Stable 1.3.3 · 2026-10-12**
+
+最多五段独立动态处理，每段可选择 Classic / Super、上压 / 下压 / Dual、SAFE、Window 和侧链 EQ。全局 Lookahead、1x / 4x / 8x / 16x 过采样及 ECO / FULL 用于统一时序和性能设置。
+
+Up to five independently controlled bands with Classic / Super algorithms, upward / downward / Dual compression, SAFE, Window and sidechain EQ. Global Lookahead, 1x / 4x / 8x / 16x oversampling and ECO / FULL control timing and performance.
+
+本产品闭源，本仓库只提供编译成品与用户文档，源码保持私有。 / This is a closed-source product. This repository distributes compiled plug-ins and user documentation; source code remains private.
+
+## 下载与附件清单 / Downloads and assets
+
+[打开 1.3.3 下载页 / Open the release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.3.3)
+
+| 文件 / File | 格式 / Format |
+|---|---|
+| [Windows x64 VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-Windows-x64-VST3.zip) | ZIP |
+| [macOS Apple Silicon VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-macOS-Apple-Silicon-VST3.zip) | ZIP |
+| [macOS Intel VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-macOS-Intel-VST3.zip) | ZIP |
+| [macOS Universal 2 AU](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-macOS-Universal-2-AU.zip) | ZIP |
+| [中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-Chinese-Installation-Guide.txt) | TXT |
+| [English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-English-Installation-Guide.txt) | TXT |
+| [中文用户手册 · 40 页](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-Chinese-User-Manual.pdf) | PDF |
+| [English user manual · 40 pages](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.3.3/QQ-Super-Multiband-Compression-1.3.3-English-User-Manual.pdf) | PDF |
+
+共 8 个附件。GitHub 使用兼容下载文件名，中文资料保留中文显示标签；桌面交付包直接使用中文文件名。 / Eight assets. GitHub uses compatible download filenames with Chinese display labels; the desktop package uses Chinese filenames directly.
+
+## 1.3.3 更新 / Changes in 1.3.3
+
+- **外部侧链 Display 修复：**External key 显示选定侧链经本段 EQ 与 Gain 后的信号电平，与 Window / SAFE 的检测结果分开；历史预览正确使用各段的独立来源和滤波设置，调整 Window 或 EQ 时持续更新。 / **External-sidechain Display:** External key shows the selected sidechain level after per-band EQ and Gain, separately from the Window / SAFE detector result. History previews respect each band's source and filters and update while Window or EQ is adjusted.
+- **主音频与侧链同时可见：**普通频谱在外部模式下显示 IN / OUT / EXT，SC EQ 页显示 MAIN / EXT / EQ OUT。 / **Simultaneous spectra:** external mode shows IN / OUT / EXT in the main view and MAIN / EXT / EQ OUT in SC EQ.
+- **上方范围改为单击切换：**右上角 ±dB 按钮循环 ±6 / 12 / 24 / 48 dB，无需下拉菜单。下方逐段 Display 的 -30 / -60 / -90 dB 操作保留。 / **One-click upper gain range:** the +/- dB button cycles +/-6 / 12 / 24 / 48 dB without a menu. The lower per-band -30 / -60 / -90 dB Display control is retained.
+- **中文悬停说明补齐：**按钮、旋钮、数值框与相关标题均提供中文帮助，包括 Makeup、Mix、Band Output、Master Out 和 Lookahead。Windows 与 Mac 使用支持中文的字体与统一换行。 / **Complete Chinese hover help:** buttons, knobs, value fields and relevant titles include help for Makeup, Mix, Band Output, Master Out and Lookahead. Windows and Mac use Chinese-capable fonts with consistent wrapping. Hover help is in Chinese; the full English manual is included.
+- **双语说明书：**中文、英文各 40 页，使用 1.3.3 界面截图；频谱、侧链与悬停操作整合进对应章节。保留已整理的 MATCH、范围/阈值、Lookahead/Window 和独立 SAFE 章节顺序。 / **Bilingual manuals:** 40 pages each with 1.3.3 screenshots. Spectrum, sidechain and hover-help instructions are integrated into their chapters, preserving the MATCH, Display/threshold, Lookahead/Window and separate SAFE sequence.
+
+从最近公开版 1.3.2 到本版，实际新增版本仅 1.3.3；历史版本记录保留在 README。 / Version 1.3.3 is the only new version since public 1.3.2; previous version records remain in the README.
+
+## 兼容性与验证 / Compatibility and validation
+
+本次调整显示和界面帮助，保留插件身份、宿主参数与延迟。Windows 1.3.2/1.3.3 的 16 组真实 VST3 对比逐采样差值为 0。Windows 与 Mac 均通过实际 VST3 加载及中文提示检查；两种 Mac VST3 通过动态、侧链、Lookahead/Window、MATCH、显示范围及外部 Display 回归。Universal 2 AU 通过 Apple Silicon 上的 auval，两个架构切片与签名已检查。
+
+These changes address display and interface help, preserving plug-in identity, host parameters and latency. Sixteen actual Windows VST3 comparisons against 1.3.2 produced zero sample difference. Windows and Mac passed real VST3 loading and Chinese tooltip checks; both Mac VST3 architectures passed dynamics, sidechain, Lookahead/Window, MATCH, range and external Display regressions. Universal 2 AU passed auval on Apple Silicon; both architecture slices and signatures were checked.
+
+## 安装与升级 / Installation and upgrade
+
+- Windows 10/11 x64：关闭宿主，将整个 `.vst3` 文件夹复制到 `C:\Program Files\Common Files\VST3`，重新扫描并确认 1.3.3。 / Windows 10/11 x64: quit the host, copy the entire `.vst3` folder to `C:\Program Files\Common Files\VST3`, rescan and confirm 1.3.3.
+- macOS 11+：按宿主架构只选择一种 VST3；原生 Apple Silicon 选 arm64，Intel/Rosetta 宿主选 Intel。放入 `~/Library/Audio/Plug-Ins/VST3`；AU 放入 `~/Library/Audio/Plug-Ins/Components`。 / macOS 11+: choose one VST3 architecture matching the host: arm64 for native Apple Silicon, Intel for Intel/Rosetta. Install VST3 in `~/Library/Audio/Plug-Ins/VST3`, AU in `~/Library/Audio/Plug-Ins/Components`.
+- 保存工程副本与旧插件后再升级；扫描目录不要保留同格式重复副本。先选 Band、确认来源与阈值，再调 Ratio、Mix 和增益；MATCH 用于当前段响度比较。 / Save a session copy and previous bundle before upgrading. Keep one installed copy per format. Select a band, confirm source and thresholds, then adjust Ratio, Mix and gain; use MATCH for per-band level comparison.
+
+## 已知限制 / Known limitations
+
+Mac 采用 ad-hoc 签名，未经过 Developer ID 公证；首次加载与隔离处理见安装说明。Intel AU 切片已检查，但没有独立的 Intel AU 运行验证。自动验证不代表所有宿主与长期工程均已人工试听。Normal 分频的原有相位特性与声音处理未在本版改变。
+
+Mac builds are ad-hoc signed, without Developer ID notarization; see the installation guide for first-load and quarantine steps. The Intel AU slice was inspected without a separate Intel AU runtime test. Automated checks do not imply long-session listening tests in every host. Existing Normal crossover phase behavior and audio processing are unchanged.
+
+
+---
+
+<details>
+<summary>历史版本记录 / Earlier version history</summary>
+
+以下内容描述其原版本。 / These records describe their original versions.
+
 # QQ Super Multiband Compression 1.3.2
 
 **Qing Audio · Stable 1.3.2 · 2026-10-11**
@@ -399,6 +462,8 @@ The first multiband version: up to five bands, adjustable crossovers, Normal/Lin
 This product is closed source and its source repository remains private. This repository provides downloads and user information only. GitHub's automatic “Source code” archives contain this public repository's page files, not the plug-in installer or compressor source.
 
 Copyright © 2026 Qing Audio. All rights reserved.
+
+</details>
 
 </details>
 
