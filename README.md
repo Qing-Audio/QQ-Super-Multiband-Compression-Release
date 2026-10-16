@@ -1,3 +1,101 @@
+# QQ Super Multiband Compression 1.4.6
+
+**Qing Audio · Stable 1.4.6 · 2026-10-16**
+
+最多五段独立动态处理，每段提供 Classic / Super、上压 / 下压 / Dual、L/R Link 与 M/S Link、TRANSPARENT、Window 和侧链 EQ；全局 Lookahead、过采样及 ECO / FULL 统一控制时序与性能。
+
+Up to five independent bands with Classic / Super, upward / downward / Dual compression, L/R Link and M/S Link, TRANSPARENT, Window and sidechain EQ. Global Lookahead, oversampling and ECO / FULL control timing and performance.
+
+本产品闭源。本仓库仅提供编译插件和用户文档，源码保持私有。 / This product is closed source. This repository provides compiled plug-ins and user documentation; source remains private.
+
+## 下载 / Downloads
+
+[**1.4.6 正式下载 / Release 1.4.6**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.4.6)
+
+| 文件 / File | 下载 / Download |
+|---|---|
+| Windows x64 · VST3 | [Windows x64 · VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-Windows-x64-VST3.zip) |
+| Apple Silicon / arm64 · VST3 | [Apple Silicon / arm64 · VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-macOS-Apple-Silicon-VST3.zip) |
+| Intel / x86_64 · VST3 | [Intel / x86_64 · VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-macOS-Intel-VST3.zip) |
+| Universal 2 · AU | [Universal 2 · AU](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-macOS-Universal-2-AU.zip) |
+| 安装说明（中文） | [安装说明（中文）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-Chinese-Installation-Guide.txt) |
+| Installation Guide (English) | [Installation Guide (English)](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-English-Installation-Guide.txt) |
+| 用户手册 中文版 · 41 页 | [用户手册 中文版 · 41 页](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-Chinese-User-Manual.pdf) |
+| User Manual English · 41 pages | [User Manual English · 41 pages](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.6/QQ-Super-Multiband-Compression-1.4.6-English-User-Manual.pdf) |
+
+Windows 使用 Win 包；macOS VST3 按宿主实际架构二选一，Logic Pro 使用 Universal 2 AU。GitHub 使用兼容的附件文件名，中文资料在下载入口和附件标签中标为中文；桌面包中文资料直接使用中文文件名。GitHub 自动生成的 “Source code” 归档仅包含此下载仓库的文档，不包含插件源码或安装文件。
+
+Use the Windows package on Windows. Select one macOS VST3 package for the host architecture, or Universal 2 AU for Logic Pro. GitHub asset filenames use compatible characters; Chinese documents have Chinese download labels. GitHub-generated “Source code” archives contain this download repository's documentation, not plug-in source or installers.
+
+## 逐版本更新 / Version history since the previous public release
+
+### 1.4.6
+
+- 精简 Display 中文悬停说明，直接说明框选、缩放与平移操作。中英文手册各 41 页，使用本版截图，将 FREEZE、TRANSPARENT、Lookahead / Window 和侧链 EQ 开关纳入原有章节。
+- Concise Chinese Display help explains selection, zoom and pan. Both 41-page manuals use current screenshots and integrate FREEZE, TRANSPARENT, Lookahead / Window and the sidechain EQ switch into the existing chapters.
+
+### 1.4.5
+
+- 每段侧链 EQ 新增独立 ON/OFF，关闭滤波时保留侧链来源、Gain、Listen 与全部频点；旧工程默认 ON。补充中文图表悬停说明：左键添加、右键移除、滚轮调整 Q / Slope，以及两侧高通/低通和中间 Bell。
+- Each band gains an independent sidechain EQ ON/OFF switch. Bypassing EQ preserves source, Gain, Listen and every node; older sessions default to ON. Chinese graph help covers adding/removing nodes, wheel Q / Slope, edge high-pass/low-pass filters and centre Bell filters.
+
+### 1.4.4
+
+- 改进 Display 边缘附近的框选操作；超出曲线的选择按边缘裁切，保留阈值拖动与 FREEZE 的操作优先级。
+- Improves Display selection near graph edges, clamps selections to the graph, and preserves threshold-drag and FREEZE control priority.
+
+### 1.4.3
+
+- Shift + 上下滚轮改为上下移动 Display，保持缩放比例；普通滚轮和 Ctrl + 滚轮缩放继续保留。
+- Shift + vertical wheel pans Display levels without changing scale. Ordinary wheel and Ctrl + wheel retain their zoom functions.
+
+### 1.4.2
+
+- Display 顶部支持以 0 dB 为上边界进行电平缩放，并支持 Ctrl + 滚轮横向时间缩放；停播时按鼠标位置观察细节。
+- The Display header supports level zoom anchored to the 0 dB upper boundary and Ctrl + wheel time zoom, with pointer-centred detail inspection while stopped.
+
+### 1.4.1
+
+- 修正 Display 历史位置导致的显示滞后，播放时右侧跟随最新音频。新增 FREEZE：停播保留曲线，首次默认打开并记住最近手动选择；工程保留自己的状态。
+- Corrects Display lag caused by history offsets, keeping the right edge on current audio during playback. FREEZE retains stopped curves, starts on and remembers the last manual choice; projects retain their own state.
+- Lookahead 更新为 0 / 25.3 / 50.6 / 76 / 100 ms，兼容旧档位。真正改变 Lookahead 时重置各段 Window；重复选择同一档及恢复工程/A-B 不重置。SAFE 更名为 TRANSPARENT，并修正零 Window 边界。
+- Lookahead becomes 0 / 25.3 / 50.6 / 76 / 100 ms with migration from older choices. Actual Lookahead changes reset per-band Window; selecting the same value or restoring a project/A-B does not. SAFE is renamed TRANSPARENT, with corrected zero-Window handling.
+
+### 1.4.0
+
+- 每段增加同时生效的 L/R Link 和 M/S Link，默认各 100%，支持工程、A/B、自动化与撤销。底部布局收紧，算法按钮缩短为 Classic / Super，OS 移至 FULL/ECO 左侧。
+- Adds simultaneous per-band L/R Link and M/S Link, both defaulting to 100%, with project, A/B, automation and undo support. The compact footer uses shorter Classic / Super buttons; OS moves left of FULL/ECO.
+- 新增 Display 框选和视图记忆，放大阈值标签。Super Single / Dual UP 默认 -90 dB，有限阈值最低 -90 dB；旧 -inf 或更低值恢复为 -90 dB，Range OFF 保留。
+- Adds Display box selection and view memory, with larger threshold labels. Super Single / Dual UP default to -90 dB, with a -90 dB minimum for finite thresholds; older -inf/lower values migrate to -90 dB. Range OFF remains.
+
+最近公开版本为 1.3.3；本次覆盖实际版本 1.4.0、1.4.1、1.4.2、1.4.3、1.4.4、1.4.5、1.4.6，遗漏版本为无。 / The previous public version was 1.3.3. This release covers every actual intermediate version, 1.4.0 through 1.4.6, with none omitted.
+
+## 安装、兼容性与验证 / Installation, compatibility and validation
+
+Windows 10/11 x64；macOS 11.0 或更新版本。先保存工程、保留旧完整 bundle 并退出宿主，再移出扫描路径内的旧同名插件、复制完整新 bundle、重新扫描。同一格式只保留一份。
+
+Windows 10/11 x64 and macOS 11.0 or newer. Save the session, keep the old complete bundle and exit the host before replacing it. Remove duplicate bundles from scan paths, copy the complete new bundle and rescan.
+
+- Windows VST3：`C:\Program Files\Common Files\VST3`
+- macOS VST3：`~/Library/Audio/Plug-Ins/VST3` 或 / or `/Library/Audio/Plug-Ins/VST3`
+- macOS AU：`~/Library/Audio/Plug-Ins/Components` 或 / or `/Library/Audio/Plug-Ins/Components`
+
+macOS 成品为 ad-hoc 签名，未经 Developer ID 公证；首次加载可能需要按安装说明处理下载隔离。AU 与 VST3 为独立格式；Apple Silicon 与 Intel VST3 不要同时安装。
+
+macOS bundles are ad-hoc signed and not Developer ID notarized. First load may require the quarantine steps in the installation guide. AU and VST3 are separate formats; do not install both VST3 architecture packages together.
+
+保留插件身份及原参数 ID/顺序；新增声道 Link 与 EQ 开关参数追加在原参数之后。旧工程缺少 Link 时为 100%/100%，缺少 EQ 开关时为 ON，旧 SAFE 状态映射到 TRANSPARENT。升级前另存工程，核对 Lookahead、阈值、侧链与自动化后试听；回滚时退出宿主并恢复旧 bundle 与升级前工程。
+
+Plug-in identity and existing parameter IDs/order are retained; Link and EQ-switch parameters are appended. Older sessions default missing Links to 100%/100% and missing EQ switches to ON; saved SAFE state maps to TRANSPARENT. Save a session copy and check Lookahead, thresholds, sidechain and automation after upgrading. To roll back, exit the host and restore the old bundle and pre-upgrade session.
+
+Windows 复用已验证成品。Apple Silicon 与 Intel VST3 进行原生音频、状态、延迟、实际加载/界面、中文字体及 Display/EQ 检查；Universal 2 AU 在 Apple Silicon 上运行 auval，并核对双架构与签名。Intel AU 未单独运行 auval；这些检查不代替各宿主实际工程试听。
+
+Windows reuses the accepted build. Apple Silicon and Intel VST3 undergo native audio/state/latency, actual loading/editor, Chinese font and Display/EQ checks. Universal 2 AU runs auval on Apple Silicon, with both architectures and signature verified. Intel AU has no separate auval runtime check; these checks do not replace auditioning real sessions in each host.
+
+---
+
+## 以往公开记录 / Earlier public records
+
 # QQ Super Multiband Compression 1.3.3
 
 **Qing Audio · Stable 1.3.3 · 2026-10-12**
