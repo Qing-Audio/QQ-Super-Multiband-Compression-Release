@@ -1,3 +1,69 @@
+# QQ Super Multiband Compression 1.4.8 Stable
+
+Qing Audio · 2026-10-18
+
+五频段动态处理，支持逐段 Classic / Super、独立上压与下压、外部侧链及 EQ、L/R Link 与 M/S Link、Lookahead / Window、TRANSPARENT 和过采样。
+Five-band dynamics with per-band Classic / Super, independent upward/downward processing, external sidechain and EQ, L/R and M/S links, Lookahead / Window, TRANSPARENT and oversampling.
+
+**[下载 1.4.8 / Download 1.4.8](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.4.8)** · [最新版本 / Latest release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/latest)
+
+本产品闭源，本仓库只提供公开说明和编译成品，源码保持私有。
+This product is closed source. This repository contains public documentation and compiled downloads; source remains private.
+
+## 下载选择 / Choose a download
+
+- [Windows 64 位 VST3 / Windows x64 VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.8/QQ-Super-Multiband-Compression-1.4.8-Windows-x64-VST3.zip) — `QQ-Super-Multiband-Compression-1.4.8-Windows-x64-VST3.zip`
+- [Apple Silicon 原生 VST3 / Native Apple Silicon VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.8/QQ-Super-Multiband-Compression-1.4.8-macOS-Apple-Silicon-VST3.zip) — `QQ-Super-Multiband-Compression-1.4.8-macOS-Apple-Silicon-VST3.zip`
+- [Intel 或 Rosetta 宿主 VST3 / Intel or Rosetta host VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.8/QQ-Super-Multiband-Compression-1.4.8-macOS-Intel-VST3.zip) — `QQ-Super-Multiband-Compression-1.4.8-macOS-Intel-VST3.zip`
+- [通用 AU / Universal 2 AU](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.8/QQ-Super-Multiband-Compression-1.4.8-macOS-Universal-2-AU.zip) — `QQ-Super-Multiband-Compression-1.4.8-macOS-Universal-2-AU.zip`
+- [安装说明（中文）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.8/QQ-Super-Multiband-Compression-1.4.8-Chinese-Installation-Guide.txt) — `QQ-Super-Multiband-Compression-1.4.8-Chinese-Installation-Guide.txt`
+- [Installation Guide (English)](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.8/QQ-Super-Multiband-Compression-1.4.8-English-Installation-Guide.txt) — `QQ-Super-Multiband-Compression-1.4.8-English-Installation-Guide.txt`
+
+Windows 10/11 64 位；macOS 11.0+。macOS VST3 按宿主运行架构选择一个；Universal 2 AU 同时包含 arm64 和 x86_64。GitHub 的 Source code ZIP/TAR 仅是本下载页面仓库快照，不能安装为插件。
+Windows 10/11 64-bit; macOS 11.0+. Choose one macOS VST3 matching the host architecture; Universal 2 AU contains arm64 and x86_64. GitHub's Source code ZIP/TAR is a snapshot of this download-page repository, not an installable plug-in.
+
+## 安装与升级 / Installation and upgrade
+
+保存工程并退出宿主，将旧版完整 bundle 移出扫描路径后，再复制新 bundle。Windows VST3 使用 `C:\Program Files\Common Files\VST3`；macOS 使用 `~/Library/Audio/Plug-Ins/VST3` 或 `~/Library/Audio/Plug-Ins/Components`。重新打开宿主并重新扫描，确认界面版本 1.4.8。同一格式只保留一份。
+Save sessions and quit hosts. Move the old complete bundle out of scan paths, then copy the new bundle to the matching directory above. Reopen and rescan, confirm version 1.4.8, and keep one copy of each format.
+
+Mac 成品为 ad-hoc 签名，未经过 Apple Developer ID 公证；必要的单个 bundle 解除隔离步骤见安装说明。
+Mac builds are ad-hoc signed, not Apple Developer ID notarized. See the installation guides for quarantine handling for the individual trusted bundle.
+
+## 手册 / Manuals
+
+本次不修订或重命名手册。[1.4.6 中英文手册](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.4.6)仍可用于一般功能参考；它们不包含下述 ECO 重开修复，请以本次更新说明为准。
+The [1.4.6 manuals](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.4.6) remain unchanged and available for general reference. They do not document the ECO reopening fix below; these release notes take precedence.
+
+## 1.4.7 → 1.4.8 更新 / Changes since 1.4.6
+
+### 1.4.7
+
+- 修复 QQ Host 等宿主保留并隐藏插件原生窗口时，ECO 未正确停止分析的问题；重开后拒绝旧表计及过期重算数据。五个频段统一处理，声音不变。
+- Fixes ECO analysis remaining active when hosts such as QQ Host retain a hidden native editor. Reopening rejects stale meter and replay data across all five bands without changing audio.
+
+### 1.4.8
+
+- ECO 关闭界面再打开时，无论 FREEZE 是否点亮，Display 都清除旧图并从新采集数据开始显示；保留缩放与 FREEZE 选择。
+- Reopening the editor in ECO clears old Display curves and starts with newly captured data whether FREEZE is on or off, while retaining zoom and the FREEZE choice.
+- 界面持续打开时，FREEZE 仍保留停播曲线；FULL、声音处理与 MATCH 完整播放要求保持。中文 FREEZE 悬停同步更新。
+- With the editor continuously open, FREEZE still retains stopped curves. FULL, audio processing and MATCH's complete-playback requirement are preserved. Chinese FREEZE help is updated.
+
+上次完整同步/公开版本为 1.4.6，本次区间为 1.4.7、1.4.8；遗漏版本：无。 / Previous complete sync/public version: 1.4.6. Versions covered: 1.4.7 and 1.4.8; none omitted.
+
+
+## 验证与已知限制 / Verification and limits
+
+Windows 已完成原生保留窗口/重建窗口回归、五频段音频一致性、Display/Freeze/缩放、中文悬停及真实 VST3 加载验证。macOS 的 Apple Silicon VST3 在原生 arm64 环境、Intel VST3 在原生 Intel Mac 上执行插件加载与回归；Universal 2 AU 在 Apple Silicon 上通过 auval，并检查两种架构及签名。Windows 的原生隐藏窗口专项用例不代表已在 Mac QQ Host 中执行同样验证；Intel AU 未单独运行 auval。
+Windows verification covers retained/recreated native editors, five-band audio equality, Display/Freeze/zoom, Chinese hints and actual VST3 loading. Apple Silicon VST3 runs on native arm64 and Intel VST3 runs on an Intel Mac for loading and regressions. Universal 2 AU passes auval on Apple Silicon with both architectures and signatures checked. The Windows native-hidden-window fixture is not a claim of equivalent Mac QQ Host testing; AU auval is not run separately on Intel.
+
+## 历史公开记录 / Previous public records
+
+以下原文保留对应历史版本；当前下载使用上方 1.4.8 链接。
+The following records retain their historical versions. Use the 1.4.8 links above for current downloads.
+
+---
+
 # QQ Super Multiband Compression 1.4.6
 
 **Qing Audio · Stable 1.4.6 · 2026-10-16**
