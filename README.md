@@ -1,3 +1,74 @@
+# QQ Super Multiband Compression 1.4.11 Stable
+
+Qing Audio · 2026-10-27
+
+**[下载 1.4.11 / Download 1.4.11](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.4.11)** · [最新版本 / Latest release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/latest)
+
+五频段动态处理：逐段 Classic / Super、独立上压与下压、侧链及 EQ、L/R Link 与 M/S Link、Lookahead / Window、TRANSPARENT 和过采样。本产品闭源，本仓库仅提供公开文档和编译成品，源码保持私有。
+Five-band dynamics with per-band Classic / Super, independent upward/downward processing, sidechain and EQ, L/R and M/S links, Lookahead / Window, TRANSPARENT and oversampling. This product is closed source; this repository provides public documentation and compiled downloads. Source remains private.
+
+## 下载与手册 / Downloads and manuals
+
+- [Windows 64 位 VST3 / Windows x64 VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Windows-x64-VST3.zip)
+- [Apple Silicon 原生 VST3 / Native Apple Silicon VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Apple-Silicon-VST3.zip)
+- [Intel 或 Rosetta 宿主 VST3 / Intel or Rosetta host VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Intel-VST3.zip)
+- [通用 AU / Universal 2 AU](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Universal-2-AU.zip)
+- [安装说明（中文）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-Installation-Guide.txt)
+- [Installation Guide (English)](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-Installation-Guide.txt)
+- [用户手册 中文版（41 页）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-User-Manual.pdf)
+- [User Manual English (41 pages)](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-User-Manual.pdf)
+
+共 8 个文件：4 个平台 ZIP、2 份安装说明、2 份本版手册。中文资料使用中文显示标签；本地包直接使用中文文件名。
+Eight files: four platform ZIPs, two installation guides and two matching manuals. Chinese documents use Chinese display labels; the local package retains Chinese filenames.
+
+## 安装与平台选择 / Installation and platform selection
+
+Windows 10/11 64 位；macOS 11.0+。Apple Silicon VST3 为 arm64，Intel VST3 为 x86_64（适用于 Intel Mac 或 Rosetta 宿主）；按宿主架构只选一个 VST3 包。Universal 2 AU 同时包含 arm64 和 x86_64，适用于 Logic Pro 等 AU 宿主。
+Windows 10/11 64-bit; macOS 11.0+. Apple Silicon VST3 is arm64; Intel VST3 is x86_64 for Intel Macs or Rosetta hosts. Choose one VST3 package matching the host architecture. Universal 2 AU includes both architectures for Logic Pro and other AU hosts.
+
+升级前保存工程并退出宿主，移出旧版同名完整 bundle，再复制新版。Windows VST3 安装到 `C:\Program Files\Common Files\VST3`；Mac 使用 `~/Library/Audio/Plug-Ins/VST3` 或 `~/Library/Audio/Plug-Ins/Components`。重新扫描后确认界面显示 1.4.11；同一格式只保留一份。
+Save sessions and quit hosts before moving the old bundle out and copying the complete new one into the matching folder above. Rescan and confirm version 1.4.11. Keep one installed copy per format and retain a session copy for rollback.
+
+Mac 成品为 ad-hoc 签名，未经 Apple Developer ID 公证；单个 bundle 的隔离处理见双语安装说明。GitHub 自动生成的 Source code ZIP/TAR 只是此公开下载仓库的文档快照，不能作为插件安装。
+Mac builds are ad-hoc signed, not Apple Developer ID notarized; the bilingual guides explain quarantine handling for the individual bundle. GitHub's automatic Source code ZIP/TAR contains this public download repository's documentation and is not an installable plug-in.
+
+
+## 逐版本更新 / Changes by version
+
+### 1.4.9
+
+- 修复 Range OFF 时超过 0 dB 的检测、动态处理与 Display，使高电平仍按所选算法处理。
+- Corrects detection, dynamics and Display above 0 dB with Range OFF, retaining the selected compression behavior at high levels.
+
+### 1.4.10
+
+- Shift + 上下滚轮可在 -inf（静音底线）至 +24 dB 之间平移 Display，缩放比例保持不变；同步保存视图及中文悬停说明。
+- Shift + vertical wheel pans Display between -inf (the silence floor) and +24 dB without changing its zoom span, with saved views and Chinese hints updated.
+
+### 1.4.11
+
+- Threshold、UP THR、DOWN THR 均可调至 -inf；Single / UP 默认保持 −90 dB，DOWN 默认保持 0 dB。保留有限阈值与旧工程数值。
+- Threshold, UP THR and DOWN THR now reach -inf. Single / UP defaults remain -90 dB and DOWN remains 0 dB. Finite thresholds and saved session values are preserved.
+- Display 中文悬停明确提示右键恢复全视图。中英文 41 页手册同步更新阈值、Display 平移、全视图恢复及 ECO/FREEZE 重开窗口说明。
+- The Chinese Display hint explicitly identifies right-click full-view reset. Matching 41-page Chinese and English manuals cover thresholds, panning, reset and ECO/FREEZE editor reopening.
+
+
+## 验证与限制 / Verification and limits
+
+Windows 复用已验收的 1.4.11 成品。Apple Silicon VST3 在自建 Mac 的原生 arm64 环境验证；Intel VST3 在自建 Apple Silicon Mac 上通过 Rosetta 执行 x86_64 测试程序，验证：阈值端点与默认值、Dual 动态及状态、Display/FREEZE/缩放、Display 高电平、实际 VST3 加载与中文悬停字形。三类 Mac 成品检查版本、架构、bundle 和签名；Universal 2 AU 在 Apple Silicon 上通过 auval。
+The accepted Windows 1.4.11 binary is reused. Apple Silicon VST3 is tested natively on a self-hosted arm64 Mac; Intel VST3 is tested with an x86_64 test host through Rosetta on a self-hosted Apple Silicon Mac for threshold endpoints/defaults, Dual dynamics and state, Display/FREEZE/zoom, Display headroom, actual VST3 loading and Chinese tooltip glyphs. All Mac bundles are checked for version, architecture, structure and signature; Universal 2 AU passes auval on Apple Silicon.
+
+Intel AU 未单独运行 auval；自动化验证不等同于对所有 DAW 和长期工程的实测。中英文手册均为对应本版本的 41 页 PDF，已检查字体、页面、书签和链接。
+AU auval is not run separately on Intel. Automated checks do not represent testing every DAW or long-running session. Both matching manuals contain 41 pages, with fonts, pages, bookmarks and links checked.
+
+
+## 历史公开记录 / Previous public records
+
+以下保留历史版本原文；当前下载使用上方 1.4.11 链接。
+Historical records follow unchanged. Use the 1.4.11 links above for current downloads.
+
+---
+
 # QQ Super Multiband Compression 1.4.8 Stable
 
 Qing Audio · 2026-10-18
