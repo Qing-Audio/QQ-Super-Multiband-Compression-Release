@@ -1,37 +1,99 @@
-# QQ Super Multiband Compression 1.4.11 Stable
+# QQ Super Multiband Compression 1.4.11
 
-Qing Audio · 2026-10-27
+**为每个频段选择合适的动态处理。**  
+**Independent dynamics for each part of your sound.**
 
-**[下载 1.4.11 / Download 1.4.11](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/tag/v1.4.11)** · [最新版本 / Latest release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/latest)
+QQ Super Multiband Compression 是 QQ Super Compression 的多段扩展。最多五个频段分别选择 Classic / Super 算法，使用向下压缩、向上压缩或 Dual 双压，处理低频起伏、中频堆积与高频尖峰，再通过 Mix 融入原始声音。
 
-五频段动态处理：逐段 Classic / Super、独立上压与下压、侧链及 EQ、L/R Link 与 M/S Link、Lookahead / Window、TRANSPARENT 和过采样。本产品闭源，本仓库仅提供公开文档和编译成品，源码保持私有。
-Five-band dynamics with per-band Classic / Super, independent upward/downward processing, sidechain and EQ, L/R and M/S links, Lookahead / Window, TRANSPARENT and oversampling. This product is closed source; this repository provides public documentation and compiled downloads. Source remains private.
+The multiband extension of QQ Super Compression brings independent Classic / Super processing to up to five bands. Use downward, upward or Dual compression to shape low-end movement, midrange buildup and high-frequency peaks, then blend the result with Mix.
 
-## 下载与手册 / Downloads and manuals
+![QQ Super Multiband Compression 1.4.11 深色界面与 Dual 双压 / Dark interface with Dual compression](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/overview-dark.png)
 
-- [Windows 64 位 VST3 / Windows x64 VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Windows-x64-VST3.zip)
-- [Apple Silicon 原生 VST3 / Native Apple Silicon VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Apple-Silicon-VST3.zip)
-- [Intel 或 Rosetta 宿主 VST3 / Intel or Rosetta host VST3](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Intel-VST3.zip)
-- [通用 AU / Universal 2 AU](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Universal-2-AU.zip)
-- [安装说明（中文）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-Installation-Guide.txt)
-- [Installation Guide (English)](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-Installation-Guide.txt)
-- [用户手册 中文版（41 页）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-User-Manual.pdf)
-- [User Manual English (41 pages)](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-User-Manual.pdf)
+*1.4.11 实际界面，提供深色与浅色主题。截图参数用于展示功能。 / Actual 1.4.11 interface, with dark and light themes. Settings shown are illustrative.*
 
-共 8 个文件：4 个平台 ZIP、2 份安装说明、2 份本版手册。中文资料使用中文显示标签；本地包直接使用中文文件名。
-Eight files: four platform ZIPs, two installation guides and two matching manuals. Chinese documents use Chinese display labels; the local package retains Chinese filenames.
+## 下载与手册 / Downloads & manuals
 
-## 安装与平台选择 / Installation and platform selection
+| 平台 / Platform | 格式 / Format | 下载 / Download |
+|---|---|---|
+| Windows 10/11 · 64 位 / 64-bit | VST3 | [Windows x64](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Windows-x64-VST3.zip) |
+| macOS 11+ · Apple Silicon | VST3 | [Apple Silicon](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Apple-Silicon-VST3.zip) |
+| macOS 11+ · Intel / Rosetta | VST3 | [Intel / Rosetta](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Intel-VST3.zip) |
+| macOS 11+ · Logic Pro 等 AU 宿主 / AU hosts | Universal 2 AU | [通用 AU / Universal AU](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Universal-2-AU.zip) |
 
-Windows 10/11 64 位；macOS 11.0+。Apple Silicon VST3 为 arm64，Intel VST3 为 x86_64（适用于 Intel Mac 或 Rosetta 宿主）；按宿主架构只选一个 VST3 包。Universal 2 AU 同时包含 arm64 和 x86_64，适用于 Logic Pro 等 AU 宿主。
-Windows 10/11 64-bit; macOS 11.0+. Apple Silicon VST3 is arm64; Intel VST3 is x86_64 for Intel Macs or Rosetta hosts. Choose one VST3 package matching the host architecture. Universal 2 AU includes both architectures for Logic Pro and other AU hosts.
+**中文：** [用户手册（41 页）](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-User-Manual.pdf) · [安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-Installation-Guide.txt)  
+**English:** [User Manual (41 pages)](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-User-Manual.pdf) · [Installation Guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-Installation-Guide.txt)
 
-升级前保存工程并退出宿主，移出旧版同名完整 bundle，再复制新版。Windows VST3 安装到 `C:\Program Files\Common Files\VST3`；Mac 使用 `~/Library/Audio/Plug-Ins/VST3` 或 `~/Library/Audio/Plug-Ins/Components`。重新扫描后确认界面显示 1.4.11；同一格式只保留一份。
-Save sessions and quit hosts before moving the old bundle out and copying the complete new one into the matching folder above. Rescan and confirm version 1.4.11. Keep one installed copy per format and retain a session copy for rollback.
+按宿主架构选择一个 VST3 包；Logic Pro 等 AU 宿主使用 AU。升级前退出宿主，替换完整插件文件夹。Mac 首次加载与安全提示见安装说明。
 
-Mac 成品为 ad-hoc 签名，未经 Apple Developer ID 公证；单个 bundle 的隔离处理见双语安装说明。GitHub 自动生成的 Source code ZIP/TAR 只是此公开下载仓库的文档快照，不能作为插件安装。
-Mac builds are ad-hoc signed, not Apple Developer ID notarized; the bilingual guides explain quarantine handling for the individual bundle. GitHub's automatic Source code ZIP/TAR contains this public download repository's documentation and is not an installable plug-in.
+Choose one VST3 package matching your host architecture, or AU for hosts such as Logic Pro. Quit the host before replacing the complete plug-in bundle. See the installation guide for first-load and macOS security steps.
 
+## 只处理需要的频段 / Focus on the bands that need work
+
+![逐段 Classic / Super、频谱和动态显示 / Per-band Classic or Super processing, spectrum and dynamics](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/bands-light.png)
+
+从一个频段开始，按需增加，最多五段。每段独立设置算法、Ratio、阈值、MAKEUP、Mix 和输出；使用 ON 与 Solo 对照试听。Classic 提供固定 dB 比例关系，Super 使用 QQ 自有曲线，两种算法都支持上压和下压。
+
+Start with one band and add more as needed, up to five. Each band has its own algorithm, ratio, threshold, makeup, mix and output controls, with enable and solo for auditioning. Classic uses a fixed dB ratio; Super uses the QQ curve. Both support upward and downward processing.
+
+**先匹配音量，再比较变化。** 播放有代表性的素材后，点击 MATCH，把当前段累计的 Dry / Wet 音量差写入 MAKEUP，再配合 A/B 判断处理效果。
+
+**Match levels before comparing.** After playing representative material, MATCH writes the current band's accumulated Dry / Wet level difference into MAKEUP. Use A/B to compare the result.
+
+## 上压与下压，分别控制 / Separate upward and downward control
+
+SINGLE 通过 Ratio 选择上压或下压。DUAL 则在同一频段中提供独立的 UP 与 DOWN：各自选择 Classic / Super、Ratio 和开关，用两条阈值划分处理区间。
+
+SINGLE selects upward or downward processing through Ratio. DUAL gives each band independent UP and DOWN sections, each with its own Classic / Super algorithm, ratio and enable switch. Two thresholds define the processing regions.
+
+| Dual 中的电平区间 / Level region in Dual | 处理 / Processing |
+|---|---|
+| 低于 UP THR / Below UP THR | 不做动态增益处理 / No dynamics gain applied |
+| UP THR 与 DOWN THR 之间 / Between the thresholds | UP：抬升选定区间 / UP: lift the selected region |
+| 高于 DOWN THR / Above DOWN THR | DOWN：压低突出部分 / DOWN: reduce the louder region |
+
+例如，可以在同一段里抬升需要突出的细节，同时控制更强的峰值；两边也可以单独关闭，分别试听。
+
+For example, lift the detail you want to bring forward while controlling stronger peaks in the same band. Either section can be switched off to audition it separately.
+
+## 看清处理前后的动态 / See how the dynamics change
+
+![放大的 Dynamic Display，输入、输出、上下压和阈值 / Expanded Dynamic Display with input, output, gain changes and thresholds](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/display-expanded.png)
+
+Display 把输入、输出、抬升、压低和阈值放在一起。折叠上方频谱后，可以给动态曲线更多空间；框选与滚轮缩放帮助查看细节，Shift + 滚轮上下平移，Ctrl + 滚轮横向缩放，右键恢复全视图。
+
+Display brings input, output, boost, reduction and thresholds together. Collapse the spectrum to give the curves more space. Drag-select or scroll to zoom, Shift-scroll to pan vertically, Ctrl-scroll to zoom horizontally, and right-click to restore the full view.
+
+FREEZE 可在停播后保留曲线继续观察。ECO 下关窗或隐藏后再打开，会从新音频重新显示，避免旧曲线与当前播放混淆。
+
+FREEZE retains curves after playback stops for closer inspection. In ECO, reopening a closed or hidden editor starts with fresh audio instead of displaying an old trace.
+
+## 让合适的声音触发压缩 / Shape what triggers the compression
+
+![逐段外部侧链 EQ，滤波节点、EQ 开关与监听 / Per-band external sidechain EQ with filters, EQ bypass and listening](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/sidechain-external.png)
+
+每段可使用内部或外部侧链，并独立设置侧链 EQ。通过高通、低通和 Bell 频点选择检测重点，配合 LISTEN 听清触发信号；EQ ON/OFF 可快速比较滤波前后，同时保留来源和频点。
+
+Each band supports internal or external sidechain input with its own EQ. Use high-pass, low-pass and bell filters to focus the detector, and LISTEN to audition its signal. EQ ON/OFF compares the filtered and unfiltered detector while retaining the source and node settings.
+
+外部侧链模式可同时观察主信号与侧链频谱。例如，将底鼓送入外部侧链，让它触发贝斯低频段的处理。实际路由由宿主设置。
+
+External sidechain mode can show both the main and sidechain spectra. For example, route a kick into the sidechain to trigger processing in a bass track's low band. Routing is configured in your host.
+
+## 配合你的工作方式 / Fit the way you work
+
+- **Lookahead + Window：** 全局 Lookahead 配合逐段 Window 调整检测时序。Global lookahead works with per-band windows to set detection timing.
+- **TRANSPARENT：** 逐段选择检测方式，帮助减少快速增益变化带来的噼啪声，并配合 Window 比较强音前后的影响。Choose the detector per band to help reduce crackling from rapid gain changes, and use Window to balance its effect around louder passages.
+- **L/R Link + M/S Link：** 每段分别控制左右声道及中间/侧面成分的动态关联。Set stereo and mid/side dynamics linking independently for each band.
+- **1x / 4x / 8x / 16x 过采样 / Oversampling：** 按工程需要选择处理倍率。Choose the processing rate for your session.
+- **ECO / FULL：** 根据播放、监听和性能需求切换；A/B 与全局旁通便于比较整套设置。Choose for playback, monitoring and performance needs; A/B and global bypass help compare the complete setup.
+
+Qing Audio · 1.4.11 Stable · Windows / macOS · VST3 / AU  
+本产品闭源。此公开仓库提供编译成品、用户文档与界面截图。 / Closed-source product. This public repository provides compiled plug-ins, user documentation and interface screenshots.
+
+---
+
+<details>
+<summary><strong>1.4.9–1.4.11 更新记录与验证 / Changes & verification</strong></summary>
 
 ## 逐版本更新 / Changes by version
 
@@ -61,6 +123,9 @@ The accepted Windows 1.4.11 binary is reused. Apple Silicon VST3 is tested nativ
 Intel AU 未单独运行 auval；自动化验证不等同于对所有 DAW 和长期工程的实测。中英文手册均为对应本版本的 41 页 PDF，已检查字体、页面、书签和链接。
 AU auval is not run separately on Intel. Automated checks do not represent testing every DAW or long-running session. Both matching manuals contain 41 pages, with fonts, pages, bookmarks and links checked.
 
+
+
+</details>
 
 ## 历史公开记录 / Previous public records
 
