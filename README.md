@@ -1,11 +1,31 @@
 # QQ Super Multiband Compression 1.4.11
 
-**为每个频段选择合适的动态处理。**  
-**Independent dynamics for each part of your sound.**
+## 超级分段压缩是什么？ / What is it?
 
-QQ Super Multiband Compression 是 QQ Super Compression 的多段扩展。最多五个频段分别选择 Classic / Super 算法，使用向下压缩、向上压缩或 Dual 双压，处理低频起伏、中频堆积与高频尖峰，再通过 Mix 融入原始声音。
+**QQ Super Multiband Compression（QQ 超级分段压缩）是一款多段动态处理插件，用于人声、乐器、总线与母带。** 它把声音按频率划分，让你在最多五个频段内分别进行向下压缩、向上压缩或 Dual 双压。例如，可以控制低频的起伏、抬升中频的细节，并压住高频的尖峰，每一段使用自己的处理设置。
 
-The multiband extension of QQ Super Compression brings independent Classic / Super processing to up to five bands. Use downward, upward or Dual compression to shape low-end movement, midrange buildup and high-frequency peaks, then blend the result with Mix.
+**QQ Super Multiband Compression is a multiband dynamics plug-in for vocals, instruments, buses and mastering.** It separates sound by frequency and lets you apply downward, upward or Dual compression independently in up to five bands. Control low-end movement, bring forward midrange detail and tame high-frequency peaks, with separate settings for each band.
+
+## 它与超级压缩是什么关系？ / How does it relate to Super Compression?
+
+它以 **QQ Super Compression（QQ 超级压缩）的动态核心**为基础，沿用 Classic / Super 两种曲线、Single / Dual 处理方式，以及 Lookahead / Window 检测思路。超级压缩的 Compressor 模式对整段音频进行动态处理；超级分段压缩则先分频，由各段独立检测、计算增益，再把处理后的声音合成。因此，你可以单独控制某一频段，而不必让整段声音一起被压低或抬高。
+
+It builds on the **dynamics core of QQ Super Compression**, sharing its Classic / Super curves, Single / Dual processing and Lookahead / Window approach. Super Compression's Compressor mode processes the full-band signal. Super Multiband Compression splits it into frequency bands, detects levels and calculates gain independently for each band, then recombines the result. This lets you control a particular frequency region without applying the same gain change to the whole signal.
+
+## 算法有何不同？ / How do the algorithms differ?
+
+**两款产品的主要区别是全频处理与分频处理；Classic / Super 则决定每一段如何根据电平改变增益。** 每段可以分别选择算法，Dual 的 UP 与 DOWN 也能使用不同算法。
+
+**The main difference between the two products is full-band versus multiband processing. Classic / Super determines how detected level translates into gain within each band.** Choose an algorithm per band, or separate algorithms for the UP and DOWN sections in Dual.
+
+- **Classic：固定 dB 比例。** 下压时，在有效处理区间内，超过有限阈值的 dB 数按 Ratio 比例压缩，便于按熟悉的压缩比设定处理力度。  
+  **Classic: a fixed dB ratio.** Within the active processing region, downward compression reduces the dB amount above a finite threshold according to Ratio, giving a familiar compression-ratio relationship.
+- **Super：QQ 原创非线性曲线。** Ratio 控制曲线的力度，实际 dB 压缩比例随检测电平变化。因此，同样的阈值和 Ratio，在 Classic 与 Super 下会得到不同的动态变化。  
+  **Super: the original QQ nonlinear curve.** Ratio controls the curve's strength, while the effective dB compression ratio varies with detected level. The same threshold and Ratio therefore produce different dynamics in Classic and Super.
+
+**与传统 Attack / Release 包络压缩的区别：** 两种算法的动态核心都直接根据检测电平与所选曲线计算增益。Lookahead 预留前瞻处理的时间，Window 决定检测时参考的时间长度；它们共同影响处理方式，Window 并不是“每隔多久压缩一次”，也不是传统的 Attack 或 Release。
+
+**Compared with conventional Attack / Release envelope compression:** both algorithms derive gain directly from the detected level and the selected curve. Lookahead provides time for advance processing; Window sets the time span used by the detector. Window is neither a processing-update interval nor a conventional Attack or Release control.
 
 ![QQ Super Multiband Compression 1.4.11 深色界面与 Dual 双压 / Dark interface with Dual compression](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/overview-dark.png)
 
