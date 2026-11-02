@@ -1,6 +1,6 @@
 # QQ Super Multiband Compression
 
-**Qing Audio · 1.4.11 Stable**
+**Qing Audio · 1.5.0 Stable**
 
 ## 1. 产品介绍 / About the plug-in
 
@@ -8,17 +8,22 @@
 
 它来自 **QQ Super Compression（QQ 超级压缩）的动态核心**。超级压缩的 Compressor 模式处理全频信号；超级分段压缩先分频，再由各段独立检测、计算增益并合成输出。因此，控制低频起伏时，可以单独调整低频段的处理，而不必把整段声音一起压低。每段的算法、阈值、Ratio、Makeup、Mix 和输出都可以独立设置。
 
-**Classic 与 Super 提供不同的动态曲线。** Classic 在有效区间内按固定 dB 比例进行下压；Super 使用 QQ 原创非线性曲线，实际压缩比例随电平变化。同样的 Ratio 在两种算法下会产生不同的动态变化。Dual 的 UP 与 DOWN 还可以分别选择算法与力度。两种算法的动态核心都直接根据检测电平计算增益，使用 **Lookahead 与 Window** 调整检测时序和参考范围；不采用传统 Attack / Release 压缩包络。
+**Classic 与 Super 提供不同的动态曲线。** Classic 在有效区间内按固定 dB 比例进行下压；Super 使用 QQ 原创非线性曲线，实际压缩比例随电平变化。同样的 Ratio 在两种算法下会产生不同的动态变化。Dual 的 UP 与 DOWN 还可以分别选择算法与力度。两种算法的动态核心都直接根据检测电平计算增益，使用 **Lookahead 与 Window** 调整检测时序和参考范围；没有独立 Attack / Release 旋钮；新增的逐段 Smooth 可在需要时柔化快速增益变化。
 
 **QQ Super Multiband Compression is a multiband dynamics plug-in for vocals, instruments, buses and mastering.** Loose lows, recessed midrange detail and sharp high-frequency peaks often need different treatment. Up to five bands let you reduce louder signals, lift a selected level region or combine both with Dual compression, then blend back the original dynamics with Mix.
 
 It is built on the **dynamics core of QQ Super Compression**. Super Compression's Compressor mode processes the full-band signal; the multiband version splits it by frequency, detects levels and calculates gain independently for each band, then recombines the output. You can control low-end movement within the low band without applying the same reduction to the entire signal. Each band has independent algorithm, threshold, ratio, makeup, mix and output settings.
 
-**Classic and Super offer different gain curves.** Classic uses a fixed dB ratio for downward compression within the active region. Super uses the original QQ nonlinear curve, with an effective compression ratio that varies with level. The same Ratio setting therefore gives different dynamics. Dual allows separate algorithms and strengths for UP and DOWN. Both derive gain directly from detected levels, using **Lookahead and Window** to set detection timing and reference span rather than a conventional Attack / Release compressor envelope.
+**Classic and Super offer different gain curves.** Classic uses a fixed dB ratio for downward compression within the active region. Super uses the original QQ nonlinear curve, with an effective compression ratio that varies with level. The same Ratio setting therefore gives different dynamics. Dual allows separate algorithms and strengths for UP and DOWN. Both derive gain directly from detected levels, using **Lookahead and Window** to set detection timing and reference span without separate Attack / Release knobs. Per-band Smooth can soften rapid gain changes when needed.
 
-![QQ 超级分段压缩 1.4.11：五段动态处理与 Dual 双压 / Five-band dynamics and Dual compression](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/overview-dark.png)
+![QQ 超级分段压缩 1.5.0：五段动态处理与 Dual 双压 / Five-band dynamics and Dual compression](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/v1.5.0/images/v1.5.0/overview-dark.png)
 
 ### 主要功能与特点 / Key features
+
+- **Smooth 逐段减轻噼啪声。** 每个频段独立 0–100%，默认 0%，只在需要时加入少量平滑。 / **Per-band Smooth:** independently soften rapid gain changes, from 0–100%, with a default of 0%.
+- **从压缩到分段削峰。** 下压最高 1000:1，上压保持 1:200，适合从轻微整理到强力峰值控制。 / **From compression to multiband peak shaping:** downward ratios reach 1000:1; upward remains 1:200.
+- **三个内置起点。** Slope 右侧载入 Master Bus、Vocal Preset、多段 Clipper；Vocal 预选三段分频与 Transparent，中段默认 OFF，可按素材打开。多段 Clipper 主要用于总线与母带，可作为 Kraftur 或其他 Clipper 的替代方案。 / **Three factory starting points:** Master Bus, Vocal Preset and Multiband Clipper. Vocal provides three regions and Transparent with the middle band initially off. Multiband Clipper is intended for bus/mastering work as an alternative to Kraftur or other clippers.
+
 
 - **每段都能单独处理。** Classic / Super、Single / Dual、内部或外部侧链、EQ、L/R Link 与 M/S Link，按频段选择。 / **Independent control per band:** Classic / Super, Single / Dual, internal or external sidechain, EQ and stereo/mid-side linking.
 - **先匹配音量，再判断声音。** MATCH 将当前段累计的 Dry / Wet 音量差写入 Makeup；结合 Mix 与 A/B 比较需要的动态变化。 / **Compare at matched levels:** MATCH writes the current band's accumulated Dry / Wet difference into Makeup; use Mix and A/B to judge the dynamics.
@@ -30,17 +35,17 @@ It is built on the **dynamics core of QQ Super Compression**. Super Compression'
 
 ### 逐段动态控制 / Per-band dynamics
 
-![1.4.11 浅色界面与逐段动态处理 / Light theme and per-band processing](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/bands-light.png)
+![1.5.0 浅色界面与逐段动态处理 / Light theme and per-band processing](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/v1.5.0/images/v1.5.0/bands-light.png)
 
 ### 放大的动态显示 / Expanded Dynamic Display
 
-![1.4.11 放大的动态显示 / Expanded Dynamic Display](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/display-expanded.png)
+![1.5.0 放大的动态显示 / Expanded Dynamic Display](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/v1.5.0/images/v1.5.0/display-expanded.png)
 
 ### 外部侧链 EQ / External sidechain EQ
 
-![1.4.11 外部侧链 EQ / External sidechain EQ](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/ee866b0c979b7bf8c9c3634d13a12378df7962e4/images/v1.4.11/sidechain-external.png)
+![1.5.0 外部侧链 EQ / External sidechain EQ](https://raw.githubusercontent.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/v1.5.0/images/v1.5.0/sidechain-external.png)
 
-截图均来自 1.4.11，参数用于展示功能。 / All screenshots show 1.4.11; settings are illustrative.
+截图均来自 1.5.0，参数用于展示功能。 / All screenshots show 1.5.0; settings are illustrative.
 
 </details>
 
@@ -61,22 +66,22 @@ The product remains closed source, and its source repository remains private. Th
 
 ## 3. 最新版下载与说明书 / Latest downloads & manuals
 
-**当前版本 / Current version：1.4.11 Stable** · **[最新版发布页 / Latest release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/latest)**
+**当前版本 / Current version：1.5.0 Stable** · **[最新版发布页 / Latest release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/latest)**
 
-发布日期 / Released：2026-10-27
+发布日期 / Released：2026-11-03
 
-插件、使用说明书和安装说明均为 **1.4.11**，在下表直接下载。 / All plug-ins, manuals and installation guides below are for **1.4.11**.
+插件、使用说明书和安装说明均为 **1.5.0**，在下表直接下载。 / All plug-ins, manuals and installation guides below are for **1.5.0**.
 
 | 平台或资料 / Platform or document | 格式 / Format | 直接下载 / Direct download |
 |---|---|---|
-| Windows 10/11 · 64 位 / 64-bit | VST3 · ZIP | [下载 Windows 插件 / Windows plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Windows-x64-VST3.zip) |
-| Mac · Apple Silicon 原生宿主 / Native host | VST3 · ZIP | [下载 Apple Silicon 插件 / Apple Silicon plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Apple-Silicon-VST3.zip) |
-| Mac · Intel / Rosetta 宿主 / Host | VST3 · ZIP | [下载 Intel 插件 / Intel plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Intel-VST3.zip) |
-| Mac · Logic Pro 等 AU 宿主 / AU hosts | Universal 2 AU · ZIP | [下载通用 AU 插件 / Universal AU plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-macOS-Universal-2-AU.zip) |
-| **中文使用说明书** | PDF · 41 页 | [**下载中文说明书**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-User-Manual.pdf) |
-| **English User Manual** | PDF · 41 pages | [**Download English manual**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-User-Manual.pdf) |
-| 中文安装说明 | TXT | [下载中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-Chinese-Installation-Guide.txt) |
-| English Installation Guide | TXT | [Download English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.4.11/QQ-Super-Multiband-Compression-1.4.11-English-Installation-Guide.txt) |
+| Windows 10/11 · 64 位 / 64-bit | VST3 · ZIP | [下载 Windows 插件 / Windows plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-Windows-x64-VST3.zip) |
+| Mac · Apple Silicon 原生宿主 / Native host | VST3 · ZIP | [下载 Apple Silicon 插件 / Apple Silicon plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-macOS-Apple-Silicon-VST3.zip) |
+| Mac · Intel / Rosetta 宿主 / Host | VST3 · ZIP | [下载 Intel 插件 / Intel plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-macOS-Intel-VST3.zip) |
+| Mac · Logic Pro 等 AU 宿主 / AU hosts | Universal 2 AU · ZIP | [下载通用 AU 插件 / Universal AU plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-macOS-Universal-2-AU.zip) |
+| **中文使用说明书** | PDF · 43 页 | [**下载中文说明书**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-Chinese-User-Manual.pdf) |
+| **English User Manual** | PDF · 43 pages | [**Download English manual**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-English-User-Manual.pdf) |
+| 中文安装说明 | TXT | [下载中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-Chinese-Installation-Guide.txt) |
+| English Installation Guide | TXT | [Download English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-English-Installation-Guide.txt) |
 
 macOS 11+：VST3 按宿主架构选择一个；Logic Pro 使用 AU。升级前退出宿主，完整安装步骤见同表中的安装说明。 / macOS 11+: choose one VST3 matching your host architecture, or AU for Logic Pro. Quit the host before upgrading; use the installation guides in the same table.
 
@@ -87,8 +92,8 @@ GitHub 自动生成的 `Source code (zip)` / `Source code (tar.gz)` 是本公开
 Windows 10/11 64 位；macOS 11.0+。Apple Silicon VST3 为 arm64，Intel VST3 为 x86_64（适用于 Intel Mac 或 Rosetta 宿主）；按宿主架构只选一个 VST3 包。Universal 2 AU 同时包含 arm64 和 x86_64，适用于 Logic Pro 等 AU 宿主。
 Windows 10/11 64-bit; macOS 11.0+. Apple Silicon VST3 is arm64; Intel VST3 is x86_64 for Intel Macs or Rosetta hosts. Choose one VST3 package matching the host architecture. Universal 2 AU includes both architectures for Logic Pro and other AU hosts.
 
-升级前保存工程并退出宿主，移出旧版同名完整 bundle，再复制新版。Windows VST3 安装到 `C:\Program Files\Common Files\VST3`；Mac 使用 `~/Library/Audio/Plug-Ins/VST3` 或 `~/Library/Audio/Plug-Ins/Components`。重新扫描后确认界面显示 1.4.11；同一格式只保留一份。
-Save sessions and quit hosts before moving the old bundle out and copying the complete new one into the matching folder above. Rescan and confirm version 1.4.11. Keep one installed copy per format and retain a session copy for rollback.
+升级前保存工程并退出宿主，移出旧版同名完整 bundle，再复制新版。Windows VST3 安装到 `C:\Program Files\Common Files\VST3`；Mac 使用 `~/Library/Audio/Plug-Ins/VST3` 或 `~/Library/Audio/Plug-Ins/Components`。重新扫描后确认界面显示 1.5.0；同一格式只保留一份。
+Save sessions and quit hosts before moving the old bundle out and copying the complete new one into the matching folder above. Rescan and confirm version 1.5.0. Keep one installed copy per format and retain a session copy for rollback.
 
 Mac 成品为 ad-hoc 签名，未经 Apple Developer ID 公证；单个 bundle 的隔离处理见双语安装说明。GitHub 自动生成的 Source code ZIP/TAR 只是此公开下载仓库的文档快照，不能作为插件安装。
 Mac builds are ad-hoc signed, not Apple Developer ID notarized; the bilingual guides explain quarantine handling for the individual bundle. GitHub's automatic Source code ZIP/TAR contains this public download repository's documentation and is not an installable plug-in.
@@ -96,17 +101,35 @@ Mac builds are ad-hoc signed, not Apple Developer ID notarized; the bilingual gu
 <details>
 <summary>本版验证与限制 / Verification and limitations</summary>
 
-Windows 复用已验收的 1.4.11 成品。Apple Silicon VST3 在自建 Mac 的原生 arm64 环境验证；Intel VST3 在自建 Apple Silicon Mac 上通过 Rosetta 执行 x86_64 测试程序，验证：阈值端点与默认值、Dual 动态及状态、Display/FREEZE/缩放、Display 高电平、实际 VST3 加载与中文悬停字形。三类 Mac 成品检查版本、架构、bundle 和签名；Universal 2 AU 在 Apple Silicon 上通过 auval。
-The accepted Windows 1.4.11 binary is reused. Apple Silicon VST3 is tested natively on a self-hosted arm64 Mac; Intel VST3 is tested with an x86_64 test host through Rosetta on a self-hosted Apple Silicon Mac for threshold endpoints/defaults, Dual dynamics and state, Display/FREEZE/zoom, Display headroom, actual VST3 loading and Chinese tooltip glyphs. All Mac bundles are checked for version, architecture, structure and signature; Universal 2 AU passes auval on Apple Silicon.
+Windows 复用已验收的 1.5.0 成品。Mac VST3 检查实际加载、Smooth、1000:1 下压、旧参数兼容、原始 Cubase 预设与内置预设的一致性、阈值和中文悬停字形。Apple Silicon 原生运行；Intel 在 GitHub 托管的原生 Intel Mac 上运行 x86_64 测试程序。三类 Mac 包检查版本、架构和 ad-hoc 签名；Universal 2 AU 在 Apple Silicon 上通过 auval。
 
-Intel AU 未单独运行 auval；自动化验证不等同于对所有 DAW 和长期工程的实测。中英文手册均为对应本版本的 41 页 PDF，已检查字体、页面、书签和链接。
-AU auval is not run separately on Intel. Automated checks do not represent testing every DAW or long-running session. Both matching manuals contain 41 pages, with fonts, pages, bookmarks and links checked.
+The accepted Windows 1.5.0 build is reused. Mac VST3 validation covers actual loading, Smooth, 1000:1 downward ratios, legacy parameters, original Cubase versus factory preset parity, thresholds and Chinese tooltip glyphs. Apple Silicon runs natively; Intel runs an x86_64 test host on a native Intel GitHub-hosted Mac. All Mac bundles are checked for version, architecture and ad-hoc signature; Universal 2 AU passes auval on Apple Silicon.
+
+Intel AU 未单独运行 auval；未声称覆盖所有 DAW 与长期工程。Mac 为 ad-hoc 签名，未经 Apple Developer ID 公证。中英文手册均为 43 页，字体、分页、书签与链接检查通过。
+
+Intel AU is not separately runtime-tested. Automated checks do not cover every DAW or long-running session. Mac builds are ad-hoc signed, not Apple Developer ID notarized. Both 43-page manuals have checked fonts, layouts, bookmarks and links.
 
 </details>
 
 ## 4. 逐版本更新记录 / Version history
 
 以下按新到旧列出各版本的真实变化；历史条目保留当时的功能、名称与状态。 / Changes are listed newest first. Historical entries retain the features, names and status applicable to those versions.
+
+### 1.5.0
+
+- Slope 右侧新增 FACTORY PRESETS，内置 Master Bus、Vocal Preset、多段 Clipper。一次载入完整设置，支持撤销和 A/B 比较。
+- FACTORY PRESETS beside Slope loads Master Bus, Vocal Preset or Multiband Clipper as a complete setup, with undo and A/B comparison.
+- Vocal Preset 预选人声三段分频与 Transparent，中段默认关闭；低频控制鼻音稳定性，高频可选 Classic 控制齿音或 Super 调整清晰度。
+- Vocal Preset supplies three vocal-friendly regions and Transparent, with the middle band initially off. Use the low band for nasal-tone stability, and the high band with Classic for sibilance or Super for clarity.
+- 多段 Clipper 主要用于总线、母带，可作为 Kraftur 或其他类型 Clipper 的替代方案。中英文手册同步更新为 43 页。
+- Multiband Clipper is intended primarily for bus and mastering work, as an alternative to Kraftur or other types of clipper. Matching Chinese and English manuals contain 43 pages.
+
+### 1.4.12
+
+- 每段新增独立 Smooth（0–100%，对应 0–1 ms），默认 0%；在需要时柔化快速增益变化，减轻噼啪声。Single / Dual 共用本段数值，支持工程、A/B、自动化及 Display 历史预览。
+- Each band adds Smooth (0–100%, corresponding to 0–1 ms), defaulting to 0%, to soften rapid gain changes when crackles occur. Single and Dual share the band value, including session, A/B, automation and Display-history support.
+- 下压 Ratio 上限提高至 1000:1；上压维持 1:200。旧参数映射保留，新扩展参数追加。
+- Downward Ratio extends to 1000:1; upward remains 1:200. Existing automation mappings are retained and new extended parameters are appended.
 
 ### 1.4.11
 
