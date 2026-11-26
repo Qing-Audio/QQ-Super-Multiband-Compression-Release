@@ -1,5 +1,11 @@
 # QQ Super Multiband Compression
 
+<!-- qing-series-migration -->
+> 本产品的新版本、安装包和中英文手册已迁至[超级压缩系列统一下载页](https://github.com/Qing-Audio/QQ-Super-Compression-Series-Release/releases/latest)。[历史成品](https://github.com/Qing-Audio/QQ-Super-Compression-Series-Release/blob/main/HISTORY.md)按产品和版本列出。
+>
+> Current installers and manuals are available from the [series download page](https://github.com/Qing-Audio/QQ-Super-Compression-Series-Release/releases/latest). [Past downloads](https://github.com/Qing-Audio/QQ-Super-Compression-Series-Release/blob/main/HISTORY.md) are listed by product and version.
+
+
 **Qing Audio · 1.5.2 Stable**
 
 ## 1. 产品介绍 / About the plug-in
