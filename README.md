@@ -1,6 +1,6 @@
 # QQ Super Multiband Compression
 
-**Qing Audio · 1.5.0 Stable**
+**Qing Audio · 1.5.2 Stable**
 
 ## 1. 产品介绍 / About the plug-in
 
@@ -66,22 +66,22 @@ The product remains closed source, and its source repository remains private. Th
 
 ## 3. 最新版下载与说明书 / Latest downloads & manuals
 
-**当前版本 / Current version：1.5.0 Stable** · **[最新版发布页 / Latest release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/latest)**
+**当前版本 / Current version：1.5.2 Stable** · **[最新版发布页 / Latest release](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/latest)**
 
-发布日期 / Released：2026-11-03
+发布日期 / Released：2026-11-27
 
-插件、使用说明书和安装说明均为 **1.5.0**，在下表直接下载。 / All plug-ins, manuals and installation guides below are for **1.5.0**.
+插件、使用说明书和安装说明均为 **1.5.2**，在下表直接下载。 / All plug-ins, manuals and installation guides below are for **1.5.2**.
 
 | 平台或资料 / Platform or document | 格式 / Format | 直接下载 / Direct download |
 |---|---|---|
-| Windows 10/11 · 64 位 / 64-bit | VST3 · ZIP | [下载 Windows 插件 / Windows plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-Windows-x64-VST3.zip) |
-| Mac · Apple Silicon 原生宿主 / Native host | VST3 · ZIP | [下载 Apple Silicon 插件 / Apple Silicon plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-macOS-Apple-Silicon-VST3.zip) |
-| Mac · Intel / Rosetta 宿主 / Host | VST3 · ZIP | [下载 Intel 插件 / Intel plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-macOS-Intel-VST3.zip) |
-| Mac · Logic Pro 等 AU 宿主 / AU hosts | Universal 2 AU · ZIP | [下载通用 AU 插件 / Universal AU plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-macOS-Universal-2-AU.zip) |
-| **中文使用说明书** | PDF · 43 页 | [**下载中文说明书**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-Chinese-User-Manual.pdf) |
-| **English User Manual** | PDF · 43 pages | [**Download English manual**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-English-User-Manual.pdf) |
-| 中文安装说明 | TXT | [下载中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-Chinese-Installation-Guide.txt) |
-| English Installation Guide | TXT | [Download English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.0/QQ-Super-Multiband-Compression-1.5.0-English-Installation-Guide.txt) |
+| Windows 10/11 · 64 位 / 64-bit | VST3 · ZIP | [下载 Windows 插件 / Windows plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-Windows-x64-VST3.zip) |
+| Mac · Apple Silicon 原生宿主 / Native host | VST3 · ZIP | [下载 Apple Silicon 插件 / Apple Silicon plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-macOS-Apple-Silicon-VST3.zip) |
+| Mac · Intel / Rosetta 宿主 / Host | VST3 · ZIP | [下载 Intel 插件 / Intel plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-macOS-Intel-VST3.zip) |
+| Mac · Logic Pro 等 AU 宿主 / AU hosts | Universal 2 AU · ZIP | [下载通用 AU 插件 / Universal AU plug-in](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-macOS-Universal-2-AU.zip) |
+| **中文使用说明书** | PDF · 43 页 | [**下载中文说明书**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-Chinese-User-Manual.pdf) |
+| **English User Manual** | PDF · 43 pages | [**Download English manual**](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-English-User-Manual.pdf) |
+| 中文安装说明 | TXT | [下载中文安装说明](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-Chinese-Installation-Guide.txt) |
+| English Installation Guide | TXT | [Download English installation guide](https://github.com/Qing-Audio/QQ-Super-Multiband-Compression-Release/releases/download/v1.5.2/QQ-Super-Multiband-Compression-1.5.2-English-Installation-Guide.txt) |
 
 macOS 11+：VST3 按宿主架构选择一个；Logic Pro 使用 AU。升级前退出宿主，完整安装步骤见同表中的安装说明。 / macOS 11+: choose one VST3 matching your host architecture, or AU for Logic Pro. Quit the host before upgrading; use the installation guides in the same table.
 
@@ -92,8 +92,8 @@ GitHub 自动生成的 `Source code (zip)` / `Source code (tar.gz)` 是本公开
 Windows 10/11 64 位；macOS 11.0+。Apple Silicon VST3 为 arm64，Intel VST3 为 x86_64（适用于 Intel Mac 或 Rosetta 宿主）；按宿主架构只选一个 VST3 包。Universal 2 AU 同时包含 arm64 和 x86_64，适用于 Logic Pro 等 AU 宿主。
 Windows 10/11 64-bit; macOS 11.0+. Apple Silicon VST3 is arm64; Intel VST3 is x86_64 for Intel Macs or Rosetta hosts. Choose one VST3 package matching the host architecture. Universal 2 AU includes both architectures for Logic Pro and other AU hosts.
 
-升级前保存工程并退出宿主，移出旧版同名完整 bundle，再复制新版。Windows VST3 安装到 `C:\Program Files\Common Files\VST3`；Mac 使用 `~/Library/Audio/Plug-Ins/VST3` 或 `~/Library/Audio/Plug-Ins/Components`。重新扫描后确认界面显示 1.5.0；同一格式只保留一份。
-Save sessions and quit hosts before moving the old bundle out and copying the complete new one into the matching folder above. Rescan and confirm version 1.5.0. Keep one installed copy per format and retain a session copy for rollback.
+升级前保存工程并退出宿主，移出旧版同名完整 bundle，再复制新版。Windows VST3 安装到 `C:\Program Files\Common Files\VST3`；Mac 使用 `~/Library/Audio/Plug-Ins/VST3` 或 `~/Library/Audio/Plug-Ins/Components`。重新扫描后确认界面显示 1.5.2；同一格式只保留一份。
+Save sessions and quit hosts before moving the old bundle out and copying the complete new one into the matching folder above. Rescan and confirm version 1.5.2. Keep one installed copy per format and retain a session copy for rollback.
 
 Mac 成品为 ad-hoc 签名，未经 Apple Developer ID 公证；单个 bundle 的隔离处理见双语安装说明。GitHub 自动生成的 Source code ZIP/TAR 只是此公开下载仓库的文档快照，不能作为插件安装。
 Mac builds are ad-hoc signed, not Apple Developer ID notarized; the bilingual guides explain quarantine handling for the individual bundle. GitHub's automatic Source code ZIP/TAR contains this public download repository's documentation and is not an installable plug-in.
@@ -101,19 +101,27 @@ Mac builds are ad-hoc signed, not Apple Developer ID notarized; the bilingual gu
 <details>
 <summary>本版验证与限制 / Verification and limitations</summary>
 
-Windows 复用已验收的 1.5.0 成品。Mac VST3 检查实际加载、Smooth、1000:1 下压、旧参数兼容、原始 Cubase 预设与内置预设的一致性、阈值和中文悬停字形。Apple Silicon 原生运行；Intel 在 GitHub 托管的原生 Intel Mac 上运行 x86_64 测试程序。三类 Mac 包检查版本、架构和 ad-hoc 签名；Universal 2 AU 在 Apple Silicon 上通过 auval。
+Windows 和两种架构的 Mac VST3 已验证实际加载。Universal 2 AU 已核对双架构，并在 Apple Silicon 上通过 Apple auval。Mac 使用 ad-hoc 签名。中英文手册各 43 页，含目录链接和书签。
 
-The accepted Windows 1.5.0 build is reused. Mac VST3 validation covers actual loading, Smooth, 1000:1 downward ratios, legacy parameters, original Cubase versus factory preset parity, thresholds and Chinese tooltip glyphs. Apple Silicon runs natively; Intel runs an x86_64 test host on a native Intel GitHub-hosted Mac. All Mac bundles are checked for version, architecture and ad-hoc signature; Universal 2 AU passes auval on Apple Silicon.
-
-Intel AU 未单独运行 auval；未声称覆盖所有 DAW 与长期工程。Mac 为 ad-hoc 签名，未经 Apple Developer ID 公证。中英文手册均为 43 页，字体、分页、书签与链接检查通过。
-
-Intel AU is not separately runtime-tested. Automated checks do not cover every DAW or long-running session. Mac builds are ad-hoc signed, not Apple Developer ID notarized. Both 43-page manuals have checked fonts, layouts, bookmarks and links.
+The Windows VST3 and both Mac VST3 architectures were tested in a plug-in host. The Universal 2 AU contains both architectures and passed Apple’s auval on Apple Silicon. Mac bundles use ad-hoc signing. Both 43-page manuals include bookmarks and a linked contents page.
 
 </details>
 
 ## 4. 逐版本更新记录 / Version history
 
 以下按新到旧列出各版本的真实变化；历史条目保留当时的功能、名称与状态。 / Changes are listed newest first. Historical entries retain the features, names and status applicable to those versions.
+
+### 1.5.2
+
+播放中打开或重新显示 ECO 面板，从这一刻的声音重新测量各段 MATCH，并重新绘制波形、主频谱、侧链频谱和电平峰值。约 400 ms 有效音频后可用 MATCH。停播时打开会等待播放，FREEZE 的选择会保留。
+
+Opening or revealing the ECO panel during playback starts a fresh MATCH measurement for each band. Curves, main and sidechain spectra, and meter peaks use newly received audio. MATCH becomes available after about 400 ms of valid audio. Opening while stopped waits for playback and preserves your FREEZE setting.
+
+### 1.5.1
+
+FULL 在播放时持续记录每段最近八秒的动态曲线。即使开始播放前没有打开面板，或宿主在关窗时暂停了界面，打开即可查看已有曲线。FREEZE 开启时，关窗期间停播也会保留最后的画面。
+
+FULL retains up to eight seconds of dynamics history per band during playback. Opening the panel shows the stored curves even on the first open or after the host suspended its editor. With FREEZE enabled, stopping while the editor is closed retains the last curves.
 
 ### 1.5.0
 
